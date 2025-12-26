@@ -4,7 +4,7 @@ import './byyourside.css'
 const Byyourside = () => {
   return (
     <div>
-      
+      byyourside
     </div>
   )
 }

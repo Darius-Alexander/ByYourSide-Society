@@ -6,11 +6,12 @@
 import React from 'react';
 import { Footer, Blog, Header, Possibility, Features, Byyourside } from './containers';
 import { CTA, Brand, Navbar } from './Components';
+import './app.css';
 
 const App = () => {
   return (
     <div className="App">
-      <div className="gradient__bg">
+      <div className="gradient_bg">
         <Navbar />
         <Header />
       </div>
