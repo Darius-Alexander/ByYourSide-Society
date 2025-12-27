@@ -1,0 +1,55 @@
+.byyourside_navbar {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items evenly, no space at edges */
+    align-items: center; /* Center items vertically */
+
+    padding: 2rem 6rem; /* Padding around the navbar */
+}
+
+.byyourside_navbar-links {
+    flex: 1; /* Take up remaining space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: center; /* Center items vertically */
+}
+
+.byyourside_navbar-links_logo {
+    margin-right: 2rem; /* Space to the right of the logo */   
+}
+
+.byyourside_navbar-links_logo img {
+    width: 67px;
+    height: auto;
+}
+
+.byyourside_navbar-links_container {
+    display: flex;
+    flex-direction: row; /* Arrange links in a row */
+}
+
+.byyourside_navbar-links_container p,
+.byyourside_navbar-menu_container p,
+.byyourside_navbar-donate p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px; /* Adjusted line height for better readability */
+    text-transform: capitalize;
+    margin: 0 1rem;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.byyourside_navbar-donate button, 
+.byyourside_navbar-menu_container button {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #2ea6fc;
+    font-family: var(--font-family);
+    border-radius: 5px;
+    font-weight: 500;
+    line-height: 25px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}

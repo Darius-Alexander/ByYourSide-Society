@@ -1,8 +1,8 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;  /* Include padding and border in element's total width and height */
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth scrolling when jumping to anchor links, default is auto */
 }
 
 body {
@@ -10,8 +10,8 @@ body {
 }
 
 a {
-    color: unset;
-    text-decoration: none;
+    color: unset; /* Inherit color from parent element, anchor tags often default to blue */
+    text-decoration: none; /* Remove underline from links */
 }
 
 .gradient_bg {
@@ -33,8 +33,8 @@ a {
 
 .gradient_text {
     background:var(--gradient-text);
-    background-clip: text;
-    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
 }
 
