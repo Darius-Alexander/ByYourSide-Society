@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Footer, Blog, Header, Possibility, Features, Byyourside } from './containers';
-import { CTA, Brand, Navbar } from './Components';
+import { CTA, Partners, Navbar } from './Components';
 import './app.css';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
         <Navbar />
         <Header />
       </div>
-      <Brand />
+      <Partners />
       <Byyourside />
       <Features />
       <Possibility />
