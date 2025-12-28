@@ -78,5 +78,48 @@
     margin-top: 1rem;
     min-width: 210px;
     border-radius: 5px;
-    box-shadow: 0 0 0 5 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 5 rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.byyourside_navbar-menu_container p {
+    margin: 1rem 0; /* Vertical spacing between links */
+}
+
+.byyourside_navbar-menu_container-links-donate {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    .byyourside_navbar-links_container {
+        display: none; /* Hide links on smaller screens */
+    }
+
+    .byyourside_navbar-menu {
+        display: flex; /* Show menu icon on smaller screens */
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .byyourside_navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .byyourside_navbar {
+        padding: 2rem;
+    }
+
+    .byyourside_navbar-donate {
+        display: none; /* Hide donate button on very small screens */
+    }
+
+    .byyourside_navbar-menu_container {
+        top: 20px;
+    }
+
+    .byyourside_navbar-menu_container-links-donate {
+        display: block; /* Show donate button in menu on very small screens */
+        margin-top: 1rem;
+    }
 }

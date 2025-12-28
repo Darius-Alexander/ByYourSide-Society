@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="byyourside_navbar-menu_container scale-up-center"> 
             <div className="byyourside_navbar-menu-container-links">
               <Menu />
-              <div className="byyourside_navbar-menu_container-links-sign">
+              <div className="byyourside_navbar-menu_container-links-donate">
                 <button type="button">Donate!</button>
               </div>
             </div>
