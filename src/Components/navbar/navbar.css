@@ -30,7 +30,7 @@
 .byyourside_navbar-links_container p,
 .byyourside_navbar-menu_container p,
 .byyourside_navbar-donate p {
-    color: #fff;
+    color: #000000;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 18px;
