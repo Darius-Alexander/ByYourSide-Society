@@ -10,7 +10,7 @@ import logo from '../../assets/logo.svg'
 const Menu = () => (
   // react fragment to group multiple elements without adding extra nodes to the DOM
   <>  
-    <p><a href="#home">Home</a></p> /
+    <p><a href="#home">Home</a></p>
     <p><a href="#about">About</a></p>
     <p><a href="#initiatives">Initiatives</a></p>
     <p><a href="#partners">Partners</a></p>

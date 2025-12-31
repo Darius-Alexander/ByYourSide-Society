@@ -18,46 +18,46 @@
 }
 
 .byyourside_navbar-links_logo img {
-    width: 67px;
-    height: auto;
+    width: 67px; /* Fixed width for logo; default: auto (natural image size) */
+    height: auto; /* Maintains aspect ratio; default: auto */
 }
 
 .byyourside_navbar-links_container {
-    display: flex;
-    flex-direction: row; /* Arrange links in a row */
+    display: flex; /* Flexbox layout; default: block */
+    flex-direction: row; /* Arrange links in a row; default: row */
 }
 
 .byyourside_navbar-links_container p,
 .byyourside_navbar-menu_container p,
 .byyourside_navbar-donate p {
-    color: #000000;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px; /* Adjusted line height for better readability */
-    text-transform: capitalize;
-    margin: 0 1rem;
-    cursor: pointer; /* Pointer cursor on hover */
+    color: #fff; /* White text color; default: inherited from parent or black */
+    font-family: var(--font-family); /* Custom font from CSS variable; default: browser default (usually Times New Roman) */
+    font-weight: 500; /* Medium weight font; default: 400 (normal) */
+    font-size: 18px; /* Font size; default: 16px */
+    line-height: 25px; /* Adjusted line height for better readability; default: normal (~1.2x font-size) */
+    text-transform: capitalize; /* Capitalize first letter of each word; default: none */
+    margin: 0 1rem; /* Horizontal margin (left/right); default: 0 */
+    cursor: pointer; /* Pointer cursor on hover; default: auto (arrow) */
 }
 
 .byyourside_navbar-donate button, 
 .byyourside_navbar-menu_container button {
-    padding: 0.5rem 1rem;
-    color: #fff;
-    background: #2ea6fc;
-    font-family: var(--font-family);
-    border-radius: 5px;
-    font-weight: 500;
-    line-height: 25px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
+    padding: 0.5rem 1rem; /* Padding inside button; default: 0 */
+    color: #fff; /* White text; default: inherited or black */
+    background: #2ea6fc; /* Blue background; default: transparent */
+    font-family: var(--font-family); /* Custom font; default: browser default */
+    border-radius: 5px; /* Rounded corners; default: 0 (square corners) */
+    font-weight: 500; /* Medium weight; default: 400 */
+    line-height: 25px; /* Line height; default: normal */
+    border: 0; /* No border; default: medium (usually 2px) */
+    outline: none; /* Remove focus outline; default: browser default focus ring */
+    cursor: pointer; /* Pointer cursor on hover; default: auto */
 }
 
 .byyourside_navbar-menu {
-    margin-left: 1 rem;
-    display: none; /* Hidden by default, shown on small screens */
-    position: relative; /* For positioning the dropdown menu */
+    margin-left: 1 rem; /* Left margin; default: 0 */
+    display: none; /* Hidden by default, shown on small screens; default: block */
+    position: relative; /* For positioning the dropdown menu; default: static */
 }
 
 .byyourside_navbar-menu svg {
@@ -65,20 +65,20 @@
 }
 
 .byyourside_navbar-menu_container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-    text-align: end;
-    background: var(--color-footer);
-    padding: 2rem;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    margin-top: 1rem;
-    min-width: 210px;
-    border-radius: 5px;
-    box-shadow: 0 0 0 5 rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: flex; /* Flexbox layout; default: block */
+    justify-content: flex-end; /* Align items to the end (right); default: flex-start */
+    align-items: flex-end; /* Align items to bottom; default: stretch */
+    flex-direction: column; /* Stack items vertically; default: row */
+    text-align: end; /* Right-align text; default: left (or start) */
+    background: var(--color-footer); /* Background color from CSS variable; default: transparent */
+    padding: 2rem; /* Padding inside container; default: 0 */
+    position: absolute; /* Positioned relative to nearest positioned ancestor; default: static */
+    top: 40px; /* Distance from top of parent; default: auto */
+    right: 0; /* Distance from right of parent; default: auto */
+    margin-top: 1rem; /* Top margin; default: 0 */
+    min-width: 210px; /* Minimum width; default: 0 */
+    border-radius: 5px; /* Rounded corners; default: 0 */
+    box-shadow: 0 0 0 5 rgba(0, 0, 0, 0.2); /* Subtle shadow for depth; default: none */
 }
 
 .byyourside_navbar-menu_container p {
@@ -86,9 +86,10 @@
 }
 
 .byyourside_navbar-menu_container-links-donate {
-    display: none;
+    display: none; /* Hidden by default; default: block */
 }
 
+/* Media query: Applies styles when screen width is 1050px or smaller (tablet/mobile) */
 @media screen and (max-width: 1050px) {
     .byyourside_navbar-links_container {
         display: none; /* Hide links on smaller screens */
@@ -99,15 +100,17 @@
     }
 }
 
+/* Media query: Applies styles when screen width is 700px or smaller (mobile) */
 @media screen and (max-width: 700px) {
     .byyourside_navbar {
-        padding: 2rem 4rem;
+        padding: 2rem 4rem; /* Reduce horizontal padding for smaller screens */
     }
 }
 
+/* Media query: Applies styles when screen width is 550px or smaller (small mobile) */
 @media screen and (max-width: 550px) {
     .byyourside_navbar {
-        padding: 2rem;
+        padding: 2rem; /* Further reduce padding for very small screens */
     }
 
     .byyourside_navbar-donate {
@@ -115,11 +118,11 @@
     }
 
     .byyourside_navbar-menu_container {
-        top: 20px;
+        top: 20px; /* Reduce top position for smaller screens */
     }
 
     .byyourside_navbar-menu_container-links-donate {
         display: block; /* Show donate button in menu on very small screens */
-        margin-top: 1rem;
+        margin-top: 1rem; /* Add spacing above button */
     }
 }
