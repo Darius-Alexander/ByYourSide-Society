@@ -1,0 +1,69 @@
+.byyourside_byyourside {
+    /* ff 3.6+ */
+    background: -moz-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
+
+    /* safari 5.1+,chrome 10+ */
+    background: -webkit-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
+
+    /* opera 11.10+ */
+    background: -o-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
+
+    /* ie 10+ */
+    background: -ms-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
+
+    /* global 92%+ browsers support */
+    background: radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
+}
+
+.byyourside_byyourside-feature {
+    display: flex; /* Flexbox layout; default: block */
+
+}
+
+.byyourside_byyourside_feature .byyourside_features-container_feature {
+    margin: 0
+}
+
+.byyourside_byyourside_feature .byyourside_features-container_feature-text {
+    max-width: 700px;
+}
+
+.byyourside_byyourside-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between heading and button */
+    align-items: center;
+    margin: 4rem 0 2rem;
+}
+
+.byyourside_byyourside-heading h1 {
+    font-size: 34px;
+    line-height: 45px;
+    font-weight: 800;
+    max-width: 510px;
+    font-family: var(--font-family);
+}
+
+.byyourside_byyourside-heading p {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+    max-width: 510px;
+    font-family: var(--font-family);
+    color: var(--color-subtext);
+    cursor: pointer;
+}
+
+.byyourside_byyourside-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+
+
+
+
+
+
