@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <div className="byyourside_header section_padding" id="home">
       <div className ="byyourside_header-content">
-        <h1 className="gradient_text">Assisting and Empowering for a Brighter Tomorrow</h1>
+        <h1 className="gradient_text">
+          Assisting and Empowering for a Brighter Tomorrow
+        </h1>
         <p> ByYourSide Society is a youth-led compassionate initiative dedicated 
             to uplifting the less fortunate in Vancouver and the lower mainland. Committed
             to fostering positive transformation, it brings hope, support, and change to 
