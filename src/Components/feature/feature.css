@@ -44,6 +44,22 @@
     color: var(--color-text);
 }
 
+@media screen and (max-width: 550px) {
+    .byyourside_features-container_feature-title h1 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .byyourside_features-container_feature-title p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .byyourside_features-container_feature {
+        margin: 1rem 0;
+    }
+}
+
 
 
 
