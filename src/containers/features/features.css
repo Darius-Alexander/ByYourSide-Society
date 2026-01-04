@@ -1,0 +1,42 @@
+.byyourside_features {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.byyourside_features-heading {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 5rem;
+}
+
+.byyourside_features-heading h1 {
+    font-family: var(--font-family);        
+    font-style: normal;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 45px;
+}
+
+.byyourside_features-heading p {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.byyourside_features-container {
+    flex: 1.5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
