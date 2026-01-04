@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    gap: 3rem;
 }
 
 .byyourside_features-heading {
@@ -39,4 +40,21 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+}
+
+@media screen and (max-width: 990px) {
+    .byyourside_features {
+        flex-direction: column;
+    }
+
+    .byyourside_features-heading {
+        margin: 0 0 2rem 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .byyourside_features-heading h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
 }
