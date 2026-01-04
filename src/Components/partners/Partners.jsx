@@ -5,7 +5,7 @@ import { CNH, GVFB, BigBrothers, KrispyKreme, PD} from './imports'
 // Need to add partner logo assets to components
 const Partners = () => {
   return (
-    <div className="byyourside_partners section_padding">
+    <div className="byyourside_partners section_padding" id="partners">
       <div>
         <img src={CNH} alt="CNH Logo" />
       </div>
