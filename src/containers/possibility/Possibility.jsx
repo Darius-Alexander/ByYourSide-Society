@@ -1,12 +1,12 @@
 import React from 'react'
 import './possibility.css'
-import impact from '../../assets/donation-impact.png'
+// import impact from '../../assets/donation-impact.png'
 
 const Possibility = () => {
   return (
     <div className="byyourside_possibility section_padding" id="donate">
       <div className="byyourside_possibility-image">
-        <img src={impact} alt="donation impact" />
+        { /* <img src={impact} alt="donation impact" /> */ }
       </div>
       <div className="byyourside_possibility-content">
         <h4>
