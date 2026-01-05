@@ -60,3 +60,28 @@
     color: var(--color-text);
     margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 950px) {
+    .byyourside_possibility {
+        flex-direction: column;
+    }
+
+    .byyourside_possibility-image {
+        margin: 1rem 0;
+    }
+
+    .byyourside_possibility-content {
+        margin-top: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
