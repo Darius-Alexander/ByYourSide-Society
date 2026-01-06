@@ -11,9 +11,10 @@ const CTA = () => {
         <h3>
           Your Monthly Impact Today!
         </h3>
-        <div className="byyourside_cta-button">
-          <button type="button">Donate!</button>
-        </div>
+      </div>
+      <div className="byyourside_cta-btn"> 
+        {/* type button ensured button doesn't automatically submit a form when clicked */}
+        <button type="button">Donate!</button> 
       </div>
     </div>
   )
