@@ -13,13 +13,13 @@ const Blog = () => {
       </div>
       <div className="byyourside_blog-container">
         <div className="byyourside_blog-container_groupA">
-          <Article />
+          <Article imgUrl = { blog01 } />
         </div>
         <div className="byyourside_blog-container_groupB">
-          <Article />
-          <Article />
-          <Article />
-          <Article />
+          <Article imgUrl = { blog02 } />
+          <Article imgUrl = { blog03 } />
+          <Article imgUrl = { blog04 } />
+          <Article imgUrl = { blog05 } />
         </div>
       </div>
     </div>
