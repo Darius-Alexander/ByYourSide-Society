@@ -13,13 +13,13 @@ const Blog = () => {
       </div>
       <div className="byyourside_blog-container">
         <div className="byyourside_blog-container_groupA">
-          <Article imgUrl = { blog01 } date="Sep 26, 2021" />
+          <Article imgUrl = { blog01 } date="Sep 26, 2021" title="Event: Car Wash Fundraiser"/>
         </div>
         <div className="byyourside_blog-container_groupB">
-          <Article imgUrl = { blog02 } date="Sep 26, 2021" />
-          <Article imgUrl = { blog03 } date="Sep 26, 2021" />
-          <Article imgUrl = { blog04 } date="Sep 26, 2021" />
-          <Article imgUrl = { blog05 } date="Sep 26, 2021" />
+          <Article imgUrl = { blog02 } date="Sep 26, 2021" title="Event: Car Wash Fundraiser"/>
+          <Article imgUrl = { blog03 } date="Sep 26, 2021" title="Event: Car Wash Fundraiser"/>
+          <Article imgUrl = { blog04 } date="Sep 26, 2021" title="Event: Car Wash Fundraiser"/>
+          <Article imgUrl = { blog05 } date="Sep 26, 2021" title="Event: Car Wash Fundraiser"/>
         </div>
       </div>
     </div>
