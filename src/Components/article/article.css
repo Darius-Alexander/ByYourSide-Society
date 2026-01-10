@@ -43,4 +43,14 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 550px) {
+    .byyourside_blog-container_article-content h3 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+
+
+
 
