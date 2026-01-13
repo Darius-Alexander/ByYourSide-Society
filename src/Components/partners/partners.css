@@ -6,18 +6,33 @@
 }
 
 .byyourside_partners div {
-    flex: 1 auto;
+    /* make each logo box a predictable size and allow wrapping */
+    flex: 0 1 150px;
     margin: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* for the decorative pseudo-element */
+    padding: 1rem; /* space around the logo so the shape is visible */
+    
 }
 
 .byyourside_partners div img {
-    width: 100%;
+    position: relative;
+    width: auto; /* preserve aspect ratio */
     height: 120px;
     max-width: 150px;
     object-fit: contain;
+}
+
+.byyourside_partners div::before {
+    /* decorative background shape behind each logo */
+    content: ""; 
+    position: absolute;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    border-radius: 16px;
+    background: var(--gradient-bar);
 }
 
 

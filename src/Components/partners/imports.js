@@ -1,8 +1,8 @@
-import CNH from '../../assets/cnh.svg';
-import GVFB from '../../assets/gvfb.svg';
-import BigBrothers from '../../assets/bigbrothers.svg';
-import KrispyKreme from '../../assets/krispykreme.svg';
-import PD from '../../assets/pd-auto.svg';
+import CNH from '../../assets/cnh.png';
+import GVFB from '../../assets/gvfb.png';
+import BigBrothers from '../../assets/bigbrothers.png';
+import KrispyKreme from '../../assets/krispykreme.png';
+import PD from '../../assets/pd-auto.jpg';
 
 export {
     CNH,
