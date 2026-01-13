@@ -18,7 +18,7 @@
 }
 
 .byyourside_navbar-links_logo img {
-    width: 67px; /* Fixed width for logo; default: auto (natural image size) */
+    width: 75px; /* Fixed width for logo; default: auto (natural image size) */
     height: auto; /* Maintains aspect ratio; default: auto */
 }
 
@@ -32,7 +32,7 @@
 .byyourside_navbar-donate p {
     color: #fff; /* White text color; default: inherited from parent or black */
     font-family: var(--font-family); /* Custom font from CSS variable; default: browser default (usually Times New Roman) */
-    font-weight: 500; /* Medium weight font; default: 400 (normal) */
+    font-weight: 1000; /* Medium weight font; default: 400 (normal) */
     font-size: 18px; /* Font size; default: 16px */
     line-height: 25px; /* Adjusted line height for better readability; default: normal (~1.2x font-size) */
     text-transform: capitalize; /* Capitalize first letter of each word; default: none */
@@ -42,16 +42,18 @@
 
 .byyourside_navbar-donate button, 
 .byyourside_navbar-menu_container button {
-    padding: 0.5rem 1rem; /* Padding inside button; default: 0 */
+    padding: 1rem 2rem; /* Padding inside button; default: 0 */
     color: #fff; /* White text; default: inherited or black */
     background: #2ea6fc; /* Blue background; default: transparent */
     font-family: var(--font-family); /* Custom font; default: browser default */
+    font-size: 20px;
     border-radius: 5px; /* Rounded corners; default: 0 (square corners) */
-    font-weight: 500; /* Medium weight; default: 400 */
+    font-weight: 1000; /* Medium weight; default: 400 */
     line-height: 25px; /* Line height; default: normal */
     border: 0; /* No border; default: medium (usually 2px) */
     outline: none; /* Remove focus outline; default: browser default focus ring */
     cursor: pointer; /* Pointer cursor on hover; default: auto */
+    margin-right: 1rem;
 }
 
 .byyourside_navbar-menu {
