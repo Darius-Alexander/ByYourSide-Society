@@ -17,7 +17,7 @@ const Header = () => {
         </p>
         <div className="byyourside_header-content_input">
           <input type="email" placeholder="Enter your email" />
-          <button type="button">Get Started</button>
+          <button type="button">Subscribe to our Newsletter</button>
         </div>
       </div>
       <div className="byyourside_header-image">
