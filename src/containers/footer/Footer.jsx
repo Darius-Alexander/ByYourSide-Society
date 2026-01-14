@@ -16,24 +16,15 @@ const Footer = () => {
       <div className="byyourside_footer-links">
         <div className="byyourside_footer-links_logo">
           <img src={logo} alt="logo"/>
-          <p>ByYourSide Society, all rights reserved</p>
-        </div>
-        <div className="byyourside_footer-links_div">
-          <h4>Links</h4>
-          <p>Socials</p>
-          <p>Events</p>
-          <p>Donate</p>
-          <p>Contact</p>
         </div>
         <div className="byyourside_footer-links_div">
           <h4>Organization</h4>
-          <p>About Us</p>
-          <p>Our Team</p>
-          <p>Privacy</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfMCZMJendPzbibU-I_YAZBHymW2lKr6-pmZihGRlGcp_GIQ/viewform">Join Our Team!</a>
+          <a href="https://docs.google.com/document/d/1ScvvgBndZybkC6hnh9oqpws8J5jvzX-YDEdOShl5HqM/edit?usp=sharing">Position Handbook</a>
         </div>
         <div className="byyourside_footer-links_div">
           <h4>Get in touch</h4>
-          <p>Email: Buyoursidesociety@gmail.com</p>
+          <p>Email: Byyoursidesociety@gmail.com</p>
           <p>Address: 5288 Joyce St Vancouver, BC V5R 6C9</p>
         </div>
       </div>
