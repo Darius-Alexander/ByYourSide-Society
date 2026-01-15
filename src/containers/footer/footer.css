@@ -46,14 +46,17 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
     flex-direction: row;
     text-align: left;
+    width: 100%; /* ensure row spans full footer */
+    gap: 1.5rem; /* consistent spacing between columns */
 }
 
 .byyourside_footer-links div {
-    width: 250px;
-    margin: 1rem; 
+    /* flexible columns: grow/shrink with a sensible base width */
+    flex: 1 1 200px;
+    max-width: 300px; /* prevents columns from growing too wide */
+    margin: 1rem;
     color: white;
 }
 
