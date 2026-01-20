@@ -4,29 +4,29 @@ import { Feature } from '../../Components'
 
 const featuresData = [
   {
-    name: "Darius Alexander - Co-Founder, Ex- CEO",
+    name: "Darius Alexander",
     img: "https://via.placeholder.com/150",
-    position: "Chief Executive Officer",
+    position: "Co-founder, Ex-CEO",
   }, 
   {
-    name: "Cyrus Alexander - Co-Founder, Ex- CMO",
+    name: "Cyrus Alexander",
     img: "https://via.placeholder.com/150",
-    position: "Chief Marketing Officer",
+    position: "Co-founder, Ex-CMO",
   },
   {
-    name: "Mike Gong - Co-Founder, Ex- COO",
+    name: "Mike Gong",
     img: "https://via.placeholder.com/150",
-    position: "Chief Operating Officer",
+    position: "Co-founder, Ex-COO",
   },
   {
-    name: "Galaxy Su - Co-Founder, Ex- CFO",
+    name: "Galaxy Su",
     img: "https://via.placeholder.com/150",
-    position: "Chief Financial Officer",
+    position: "Co-founder, Ex-CFO",
   },
   {
-    name: "Eldrick Chand - Co-Founder, Ex- CHRO",
+    name: "Eldrick Chand",
     img: "https://via.placeholder.com/150",
-    position: "Chief Human Resources Officer",
+    position: "Co-founder, Ex-CHRO",
   },
 ]
 
@@ -44,10 +44,10 @@ const Features = () => {
           of Windermere Secondary School united to form ByYourSide Society, a youth-led
           compassionate organization dedicated to uplifting the lives of the less fortunate
         </p>
-      </div>
+      </div>      
       <div className="byyourside_features-container">
         {featuresData.map((item, index) => (
-          <Feature title={item.title} text={item.text} key={item.title + index} />
+          <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
       </div>
     </div>
