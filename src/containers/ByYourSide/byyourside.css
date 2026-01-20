@@ -1,30 +1,14 @@
-.byyourside_byyourside {
-    /* ff 3.6+ */
-    background: -moz-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
-
-    /* safari 5.1+,chrome 10+ */
-    background: -webkit-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
-
-    /* opera 11.10+ */
-    background: -o-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
-
-    /* ie 10+ */
-    background: -ms-radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
-
-    /* global 92%+ browsers support */
-    background: radial-gradient(circle at 4% 0%, rgba(190, 246, 255, 1) 18%, rgba(0, 109, 212, 1) 69%, rgba(0, 52, 100, 1) 91%);
-}
 
 .byyourside_byyourside-feature {
     display: flex; /* Flexbox layout; default: block */
 
 }
 
-.byyourside_byyourside_feature .byyourside_features-container_feature {
+.byyourside_features-container_feature {
     margin: 0
 }
 
-.byyourside_byyourside_feature .byyourside_features-container_feature-text {
+.byyourside_features-container_feature-text {
     max-width: 700px;
 }
 
@@ -90,12 +74,12 @@
 
 @media screen and (max-width: 650px) {
     /* Customizing feature component as per needs */
-    .byyourside_byyourside-feature .byyourside_features-container__feature {
+    .byyourside_features-container__feature {
         flex-direction: column;
     }
 
     /* Customizing feature component as per needs */
-    .byyourside_byyourside-feature .byyourside_features-container_feature-text {
+    .byyourside_features-container_feature-text {
         margin-top: 0.5rem;
     }
 

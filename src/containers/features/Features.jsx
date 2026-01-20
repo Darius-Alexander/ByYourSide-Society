@@ -4,24 +4,29 @@ import { Feature } from '../../Components'
 
 const featuresData = [
   {
-    title: "Darius Alexander - Co-Founder, Ex- CEO",
-    text: "Brief Description"
+    name: "Darius Alexander - Co-Founder, Ex- CEO",
+    img: "https://via.placeholder.com/150",
+    position: "Chief Executive Officer",
   }, 
   {
-    title: "Cyrus Alexander - Co-Founder, Ex- CMO",
-    text: "Brief Description"
+    name: "Cyrus Alexander - Co-Founder, Ex- CMO",
+    img: "https://via.placeholder.com/150",
+    position: "Chief Marketing Officer",
   },
   {
-    title: "Mike Gong - Co-Founder, Ex- COO",
-    text: "Brief Description"
+    name: "Mike Gong - Co-Founder, Ex- COO",
+    img: "https://via.placeholder.com/150",
+    position: "Chief Operating Officer",
   },
   {
-    title: "Galaxy Su - Co-Founder, Ex- CFO",
-    text: "Brief Description"
+    name: "Galaxy Su - Co-Founder, Ex- CFO",
+    img: "https://via.placeholder.com/150",
+    position: "Chief Financial Officer",
   },
-    {
-    title: "Eldrick Chand - Co-Founder, Ex- CHRO",
-    text: "Brief Description"
+  {
+    name: "Eldrick Chand - Co-Founder, Ex- CHRO",
+    img: "https://via.placeholder.com/150",
+    position: "Chief Human Resources Officer",
   },
 ]
 
