@@ -18,6 +18,22 @@ const Donation = () => {
     setSelectedAmount(null); // Deselect preset buttons when typing custom amount
   };
 
+  // Returns the current donation amount (either preset or custom)
+  const getCurrentAmount = () => {
+    return selectedAmount || parseFloat(customAmount) || 0;
+  };
+
+  // Placeholder submit handler (Stripe integration comes later)
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page refresh
+    const amount = getCurrentAmount();
+    if (amount <= 0) {
+      alert('Please select or enter a donation amount');
+      return;
+    }
+    alert(`Thank you! Your donation of $${amount} would be processed here.`);
+  };
+
   return (
     <div className="byyourside_donation section_padding">
       <div className="byyourside_donation-content">
@@ -59,6 +75,19 @@ const Donation = () => {
             />
           </div>
         </div>
+
+        <div className="byyourside_donation-summary">
+          <p>Donation amount: <strong>${getCurrentAmount().toFixed(2)}</strong></p>
+        </div>
+
+        <button 
+          type="button"
+          className="byyourside_donation-submit"
+          onClick={handleSubmit}
+          disabled={getCurrentAmount() <= 0}
+        >
+          Donate ${getCurrentAmount().toFixed(2)}
+        </button>
 
       </div>
     </div>
