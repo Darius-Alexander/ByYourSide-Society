@@ -1,0 +1,40 @@
+/* filepath: c:\Users\dariu\OneDrive\Desktop\byyoursidesociety\src\containers\donation\donation.css */
+
+/* Main container - centers content vertically and horizontally */
+.byyourside_donation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color-bg);
+}
+
+/* The "card" that holds the donation form */
+.byyourside_donation-content {
+    max-width: 600px;
+    width: 100%;
+    padding: 3rem;
+    background: var(--color-footer);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header section with title and description */
+.byyourside_donation-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.byyourside_donation-header h1 {
+    font-family: var(--font-family);
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.byyourside_donation-header p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--color-text);
+}

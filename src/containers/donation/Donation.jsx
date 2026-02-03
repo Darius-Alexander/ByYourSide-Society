@@ -1,5 +1,4 @@
-// filepath: c:\Users\dariu\OneDrive\Desktop\byyoursidesociety\src\containers\donation\Donation.jsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './donation.css'
 
 const donationAmounts = [10, 25, 50, 100, 250];
@@ -60,7 +59,7 @@ const Donation = () => {
             ))}
           </div>
         </div>
-
+        
         <div className="byyourside_donation-custom">
           <h3>Or enter a custom amount</h3>
           <div className="byyourside_donation-custom_input">
