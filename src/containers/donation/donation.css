@@ -1,6 +1,3 @@
-/* filepath: c:\Users\dariu\OneDrive\Desktop\byyoursidesociety\src\containers\donation\donation.css */
-
-/* Main container - centers content vertically and horizontally */
 .byyourside_donation {
     display: flex;
     justify-content: center;
@@ -27,8 +24,9 @@
 
 .byyourside_donation-header h1 {
     font-family: var(--font-family);
-    font-size: 48px;
+    font-size: 2.5rem;
     font-weight: 800;
+    color: #fff;
     margin-bottom: 1rem;
 }
 
@@ -143,4 +141,51 @@
 .byyourside_donation-custom_input input::placeholder {
     color: var(--color-text);
     font-weight: 400;
+}
+
+/* Summary section showing selected amount */
+.byyourside_donation-summary {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.byyourside_donation-summary p {
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: var(--color-text);
+}
+
+.byyourside_donation-summary strong {
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Submit button */
+.byyourside_donation-submit {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--gradient-bar);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect - slight lift */
+.byyourside_donation-submit:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Disabled state when no amount selected */
+.byyourside_donation-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
