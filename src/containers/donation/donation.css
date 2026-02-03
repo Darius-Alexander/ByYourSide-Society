@@ -87,3 +87,60 @@
     border-color: transparent;
     color: #fff;
 }
+
+/* Custom amount section */
+.byyourside_donation-custom {
+    margin-bottom: 1.5rem;
+}
+
+.byyourside_donation-custom h3 {
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+/* Input wrapper with $ symbol */
+.byyourside_donation-custom_input {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--color-text);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Highlight border when input is focused */
+.byyourside_donation-custom_input:focus-within {
+    border-color: #fff;
+}
+
+/* Dollar sign */
+.byyourside_donation-custom_input span {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+/* The actual input field */
+.byyourside_donation-custom_input input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+/* Placeholder text style */
+.byyourside_donation-custom_input input::placeholder {
+    color: var(--color-text);
+    font-weight: 400;
+}
