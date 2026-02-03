@@ -189,3 +189,89 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+
+@media screen and (max-width: 650px) {
+    .byyourside_donation {
+        padding: 2rem 1rem;
+    }
+
+    .byyourside_donation-content {
+        padding: 2rem;
+    }
+
+    .byyourside_donation-header h1 {
+        font-size: 2rem;
+    }
+
+    .byyourside_donation-header p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .donation-amount-btn {
+        flex: 1 1 calc(50% - 0.75rem);
+    }
+
+    .byyourside_donation-custom_input span,
+    .byyourside_donation-custom_input input {
+        font-size: 20px;
+    }
+
+    .byyourside_donation-summary strong {
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .byyourside_donation {
+        padding: 1rem 0.5rem;
+    }
+
+    .byyourside_donation-content {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .byyourside_donation-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .byyourside_donation-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .byyourside_donation-amounts h3,
+    .byyourside_donation-custom h3 {
+        font-size: 16px;
+    }
+
+    .donation-amount-btn {
+        flex: 1 1 100%;
+        padding: 0.875rem 1rem;
+        font-size: 16px;
+    }
+
+    .byyourside_donation-custom_input {
+        padding: 0.375rem 0.75rem;
+    }
+
+    .byyourside_donation-custom_input span,
+    .byyourside_donation-custom_input input {
+        font-size: 18px;
+    }
+
+    .byyourside_donation-summary p {
+        font-size: 16px;
+    }
+
+    .byyourside_donation-summary strong {
+        font-size: 18px;
+    }
+
+    .byyourside_donation-submit {
+        padding: 1rem 1.5rem;
+        font-size: 16px;
+    }
+}
