@@ -4,25 +4,24 @@
 // Defines a functional component named App using RAFCE
 
 import React from 'react';
-import { Footer, Blog, Header, Possibility, Features, Byyourside } from './containers';
-import { CTA, Partners, Navbar } from './Components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home, Donation } from './containers';
+import { Navbar } from './Components';
 import './app.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <div className="gradient_bg">
-        <Navbar />
-        <Header />
+    <BrowserRouter>
+      <div className="App">
+        <div className="gradient_bg">
+          <Navbar />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/donate" element={<Donation />} />
+        </Routes>
       </div>
-      <Partners />
-      <Byyourside />
-      <Features />
-      <Possibility />
-      <CTA />
-      <Blog />
-      <Footer />
-    </div>
+    </BrowserRouter>
   )
 }
 
