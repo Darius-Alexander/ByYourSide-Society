@@ -1,5 +1,6 @@
 import { useState } from 'react' // React hook for managing component state
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri' // Importing menu icons from react-icons library
+import { Link } from 'react-router-dom' // For navigation between pages without reload
 import './navbar.css'
 import logo from '../../assets/logo.svg'
 
@@ -35,9 +36,10 @@ const Navbar = () => {
         <div className="byyourside_navbar-links_container">
           <Menu />
         </div>
-      </div>
-      <div className="byyourside_navbar-donate">
-        <button type="button">Donate!</button>
+      </div>      <div className="byyourside_navbar-donate">
+        <Link to="/donate">
+          <button type="button">Donate!</button>
+        </Link>
       </div>
       <div className="byyourside_navbar-menu">
         {/* Ternary operator: Conditionally renders either close or menu icon based on toggleMenu state
@@ -56,9 +58,10 @@ const Navbar = () => {
           <div className="byyourside_navbar-menu_container scale-up-center"> 
             <div className="byyourside_navbar-menu-container-links">
               {/* Menu component invocation: Renders the Menu component (defined at top) with all navigation links */}
-              <Menu />
-              <div className="byyourside_navbar-menu_container-links-donate">
-                <button type="button">Donate!</button>
+              <Menu />              <div className="byyourside_navbar-menu_container-links-donate">
+                <Link to="/donate">
+                  <button type="button">Donate!</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -68,4 +71,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar // Makes Navbar component available for import in other files
+export default Navbar 
