@@ -4,6 +4,7 @@
     align-items: center; /* Center items vertically */
 
     padding: 2rem 6rem; /* Padding around the navbar */
+    background: var(--color-bg); /* Solid background color */
 }
 
 .byyourside_navbar-links {

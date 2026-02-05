@@ -18,13 +18,11 @@ import { Navbar } from './Components';
 import './app.css';
 
 const App = () => {
-  return (
+  return (    
     <BrowserRouter>
       <div className="App">
         {/* Navbar is OUTSIDE Routes so it shows on every page */}
-        <div className="gradient_bg">
-          <Navbar />
-        </div>
+        <Navbar />
         <Routes>
           {/* When URL is "/", show the Home component */}
           <Route path="/" element={<Home />} />

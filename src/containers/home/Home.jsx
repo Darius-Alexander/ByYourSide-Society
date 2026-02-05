@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Import page sections from the containers folder
 // '..' means "go up one level" to the containers folder, then use its index.js
 import { Footer, Blog, Header, Possibility, Features, Byyourside } from '..';
@@ -8,9 +10,8 @@ import { CTA, Partners } from '../../Components';
 const Home = () => {
     return (
         <>
-            <div className="gradient_bg">
-                <Header />
-            </div>
+            {/* Header continues the gradient from Navbar */}
+            <Header />
             
             <Partners />
             <Byyourside />

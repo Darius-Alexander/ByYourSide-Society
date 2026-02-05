@@ -32,9 +32,8 @@ const Donation = () => {
     }
     alert(`Thank you! Your donation of $${amount} would be processed here.`);
   };
-
   return (
-    <div className="byyourside_donation section_padding">
+    <div className="byyourside_donation section_padding gradient_bg">
       <div className="byyourside_donation-content">
         <div className="byyourside_donation-header">
           <h1 className="gradient_text">Make a Donation</h1>
@@ -59,7 +58,7 @@ const Donation = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="byyourside_donation-custom">
           <h3>Or enter a custom amount</h3>
           <div className="byyourside_donation-custom_input">

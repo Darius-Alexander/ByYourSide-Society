@@ -5,7 +5,8 @@ import ByYourSide from '../../assets/logo.svg'
 
 const Header = () => {
   return (
-    <div className="byyourside_header section_padding" id="home">
+    // gradient_bg continues the gradient from the Navbar above
+    <div className="byyourside_header section_padding gradient_bg" id="home">
       <div className ="byyourside_header-content">
         <h1 className="gradient_text">
           Assisting and Empowering for a Brighter Tomorrow
