@@ -6,16 +6,15 @@ import logo from '../../assets/logo.svg'
 
 
 // Menu component for navigation links, returns resuable JSX
-// Links are anchor tags pointing to different sections of the same page
-// (indicated by the # symbol in the href attribute instead of a URL)
+// Links use "/#section" format to navigate to home page AND scroll to section
 const Menu = () => (
   // react fragment to group multiple elements without adding extra nodes to the DOM
   <>  
-    <p><a href="#home">Home</a></p>
-    <p><a href="#byyourside">About</a></p>
-    <p><a href="#initiatives">Initiatives</a></p>
-    <p><a href="#partners">Partners</a></p>
-    <p><a href="#team">Team</a></p>
+    <p><a href="/#home">Home</a></p>
+    <p><a href="/#byyourside">About</a></p>
+    <p><a href="/#initiatives">Initiatives</a></p>
+    <p><a href="/#partners">Partners</a></p>
+    <p><a href="/#team">Team</a></p>
   </>
 )
 
