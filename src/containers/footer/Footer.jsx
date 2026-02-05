@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom' // For navigation to donation page
 import './footer.css'
 import logo from '../../assets/logo.svg';
 
@@ -8,11 +9,10 @@ const Footer = () => {
       <div className="byyourside_footer-heading">
         <h1 className="gradient_text">
           Join us in making a difference – together we can create a brighter future!
-        </h1>
-      </div>
-      <div className="byyourside_footer-btn">
+        </h1>      </div>
+      <Link to="/donate" className="byyourside_footer-btn">
         <p>Donate Now</p>
-      </div>
+      </Link>
       <div className="byyourside_footer-links">
         <div className="byyourside_footer-links_logo">
           <img src={logo} alt="logo"/>
