@@ -2,31 +2,34 @@ import React from 'react'
 import './byyourside.css'
 import { Feature } from '../../Components'
 
+import defaultpic from '../../assets/deafultpic.png'
+
+
 const teamData = [
   {
-    name: "Operation Hunger",
-    img: "https://via.placeholder.com/150",
-    position: "Project Manager",
+    name: "Kazma Yoshimura",
+    img: defaultpic,
+    position: "CEO",
   },
   {
     name: "Operation Hunger",
-    img: "https://via.placeholder.com/150",
-    position: "Project Manager",
+    img: defaultpic,
+    position: "COO",
   },
   {
     name: "Operation Hunger",
-    img: "https://via.placeholder.com/150",
-    position: "Project Manager",
+    img: defaultpic,
+    position: "CFO",
   },
   {
     name: "Operation Hunger",
-    img: "https://via.placeholder.com/150",
-    position: "Project Manager",
+    img: defaultpic,
+    position: "CMO",
   },
   {
     name: "Operation Hunger",
-    img: "https://via.placeholder.com/150",
-    position: "Project Manager",
+    img: defaultpic,
+    position: "CHRO",
   },
 ]
 

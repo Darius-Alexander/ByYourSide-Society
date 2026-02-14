@@ -2,30 +2,38 @@ import React from 'react'
 import './features.css'
 import { Feature } from '../../Components'
 
+// Import team member images from assets
+import DariusAlexander from '../../assets/DariusAlexander.jpg'
+// import CyrusAlexander from '../../assets/CyrusAlexander.jpg'
+import MikeGong from '../../assets/MikeGong.jpg'
+// import GalaxySu from '../../assets/GalaxySu.jpg'
+import EldrickChand from '../../assets/EldrickChand.jpg'
+import defaultpic from '../../assets/deafultpic.png'
+
 const featuresData = [
   {
     name: "Darius Alexander",
-    img: "https://via.placeholder.com/150",
+    img: DariusAlexander,
     position: "Co-founder, Ex-CEO",
   }, 
   {
     name: "Cyrus Alexander",
-    img: "https://via.placeholder.com/150",
+    img: defaultpic,
     position: "Co-founder, Ex-CMO",
   },
   {
     name: "Mike Gong",
-    img: "https://via.placeholder.com/150",
+    img: MikeGong,
     position: "Co-founder, Ex-COO",
   },
   {
     name: "Galaxy Su",
-    img: "https://via.placeholder.com/150",
+    img: defaultpic,
     position: "Co-founder, Ex-CFO",
   },
   {
     name: "Eldrick Chand",
-    img: "https://via.placeholder.com/150",
+    img: EldrickChand,
     position: "Co-founder, Ex-CHRO",
   },
 ]
@@ -55,12 +63,6 @@ const Features = () => {
 }
 
 export default Features
-
-
-
-
-
-
 
 
 

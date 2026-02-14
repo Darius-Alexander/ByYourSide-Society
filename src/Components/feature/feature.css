@@ -29,17 +29,19 @@
 }
 
 .byyourside_features-container_feature-image {
-    width: 100%;
-    max-width: 250px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .byyourside_features-container_feature-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Crops image to fit the square, maintaining aspect ratio */
+    border-radius: 50%; /* Makes it circular */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
 
 @media screen and (max-width: 550px) {
