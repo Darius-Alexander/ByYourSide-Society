@@ -3,12 +3,10 @@ import './features.css'
 import { Feature } from '../../Components'
 
 // Import team member images from assets
-import DariusAlexander from '../../assets/DariusAlexander.jpg'
-// import CyrusAlexander from '../../assets/CyrusAlexander.jpg'
+import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
 import MikeGong from '../../assets/MikeGong.jpg'
 // import GalaxySu from '../../assets/GalaxySu.jpg'
 import EldrickChand from '../../assets/EldrickChand.jpg'
-import defaultpic from '../../assets/deafultpic.png'
 
 const featuresData = [
   {
@@ -18,7 +16,7 @@ const featuresData = [
   }, 
   {
     name: "Cyrus Alexander",
-    img: defaultpic,
+    img: CyrusAlexander,
     position: "Co-founder, Ex-CMO",
   },
   {

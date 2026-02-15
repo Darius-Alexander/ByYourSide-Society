@@ -2,8 +2,24 @@ import React from 'react'
 import './byyourside.css'
 import { Feature } from '../../Components'
 
-import defaultpic from '../../assets/deafultpic.png'
+import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
 
+const boardData = [
+  {
+    name: "Cyrus Alexander",
+    img: defaultpic,
+    position: "Chair",
+  },
+  {
+    name: "Kenta Yoshimura",
+    img: defaultpic,
+    position: "Vice-Chair",
+  },  {
+    name: "Darius Alexander",
+    img: DariusAlexander,
+    position: "Software Engineer"
+  }
+]
 
 const teamData = [
   {
@@ -40,6 +56,9 @@ const Byyourside = () => {
         <h1 className = "gradient_text">
           Our Team
         </h1>
+      </div>
+      <div className="byyourside_byyourside-container">
+        {boardData}
       </div>
       <div className="byyourside_byyourside-container">
         {teamData.map((item, index) => (
