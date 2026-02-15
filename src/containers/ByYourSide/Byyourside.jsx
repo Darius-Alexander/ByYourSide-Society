@@ -3,23 +3,25 @@ import './byyourside.css'
 import { Feature } from '../../Components'
 
 import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
+// import KentaYoshimura from '../../assets/KentaYoshimura.jpg'
 
 const boardData = [
   {
     name: "Cyrus Alexander",
-    img: defaultpic,
+    img: CyrusAlexander,
     position: "Chair",
   },
   {
     name: "Kenta Yoshimura",
     img: defaultpic,
     position: "Vice-Chair",
-  },  {
+  },  
+  {
     name: "Darius Alexander",
     img: DariusAlexander,
-    position: "Software Engineer"
+    position: "Software Developer"
   }
-]
+] 
 
 const teamData = [
   {
@@ -59,10 +61,10 @@ const Byyourside = () => {
         <h2 className = "byyourside_byyourside_heading">
           Our Board
         </h2>
-      </div> 
+      </div>      
       <div className="byyourside_byyourside-container">
         {boardData.map((item, index) => (
-          <Feature name={item.name} img={item.name} position={item.position} key={item.name + index} />
+          <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
       </div>
       <h2 className = "byyourside_byyourside_heading">

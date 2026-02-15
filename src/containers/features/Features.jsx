@@ -5,7 +5,7 @@ import { Feature } from '../../Components'
 // Import team member images from assets
 import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
 import MikeGong from '../../assets/MikeGong.jpg'
-// import GalaxySu from '../../assets/GalaxySu.jpg'
+import GalaxySu from '../../assets/GalaxySu.jpg'
 import EldrickChand from '../../assets/EldrickChand.jpg'
 
 const featuresData = [
@@ -26,7 +26,7 @@ const featuresData = [
   },
   {
     name: "Galaxy Su",
-    img: defaultpic,
+    img: GalaxySu,
     position: "Co-founder, Ex-CFO",
   },
   {

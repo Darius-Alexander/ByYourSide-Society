@@ -40,6 +40,7 @@
     width: 150px;
     height: 150px;
     object-fit: cover; /* Crops image to fit the square, maintaining aspect ratio */
+    object-position: center top; /* Focus on the top of the image (where faces usually are) */
     border-radius: 50%; /* Makes it circular */
     border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
