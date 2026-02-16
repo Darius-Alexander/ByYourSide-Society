@@ -14,9 +14,9 @@
 
 .byyourside_byyourside-heading {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Space between heading and button */
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     margin: 4rem 0 2rem;
 }
 
@@ -24,8 +24,16 @@
     font-size: 34px;
     line-height: 45px;
     font-weight: 800;
-    max-width: 510px;
     font-family: var(--font-family);
+}
+
+.byyourside_byyourside-subheading {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 2rem 0 1rem;
 }
 
 .byyourside_byyourside-heading p {
@@ -42,7 +50,9 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
 }
 
 

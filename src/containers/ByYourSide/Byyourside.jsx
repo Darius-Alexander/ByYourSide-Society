@@ -54,20 +54,20 @@ const teamData = [
 const Byyourside = () => {
   return (
     <div className="byyourside_byyourside gradient_bg section_margin" id="byyourside">
-      <div className= "byyourside_byyourside-heading">
-        <h1 className = "gradient_text">
+      <div className="byyourside_byyourside-heading">
+        <h1 className="gradient_text">
           Our Team
         </h1>
-        <h2 className = "byyourside_byyourside_heading">
-          Our Board
-        </h2>
-      </div>      
+      </div>
+      <h2 className="byyourside_byyourside-subheading">
+        Our Board
+      </h2>
       <div className="byyourside_byyourside-container">
         {boardData.map((item, index) => (
           <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
       </div>
-      <h2 className = "byyourside_byyourside_heading">
+      <h2 className="byyourside_byyourside-subheading">
         Our Executives
       </h2>
       <div className="byyourside_byyourside-container">
