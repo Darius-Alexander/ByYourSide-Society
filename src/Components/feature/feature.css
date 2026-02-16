@@ -18,6 +18,17 @@
     line-height: 24px;
     letter-spacing: -0.04em;
     color: #FFFFFF;
+    margin: 0.5rem 0 0.25rem;
+}
+
+.byyourside_features-container_feature-title h2 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.7); /* Slightly muted white */
+    margin: 0;
+    letter-spacing: 0.02em;
 }
 
 .byyourside_features-container_feature-title div {
@@ -49,6 +60,11 @@
     .byyourside_features-container_feature-title h1 {
         font-size: 14px;
         line-height: 22px;
+    }
+
+    .byyourside_features-container_feature-title h2 {
+        font-size: 12px;
+        line-height: 18px;
     }
 
     .byyourside_features-container_feature {
