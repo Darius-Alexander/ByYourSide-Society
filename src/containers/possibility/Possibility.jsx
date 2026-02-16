@@ -5,9 +5,6 @@ import './possibility.css'
 const Possibility = () => {
   return (
     <div className="byyourside_possibility section_padding" id="donate">
-      <div className="byyourside_possibility-image">
-        { /* <img src={impact} alt="donation impact" /> */ }
-      </div>
       <div className="byyourside_possibility-content">
         <h4>
           Make a Difference Today!
@@ -20,7 +17,6 @@ const Possibility = () => {
           fortunate in Vancouver and the lower mainland. Join us in creating 
           lasting change and empowering our community for a brighter tomorrow.
         </p>
-        <button type="button">Donate Now</button>
       </div>
     </div>
   )

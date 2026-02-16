@@ -3,19 +3,6 @@
     flex-direction: row;
 }
 
-.byyourside_possibility-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 2rem;
-}
-
-.byyourside_possibility-image img {
-    width: 100%;
-    height: 100%;
-}
-
 .byyourside_possibility-content {
     flex: 1;
     display: flex;
