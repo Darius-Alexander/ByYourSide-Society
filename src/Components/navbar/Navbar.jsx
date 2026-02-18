@@ -11,10 +11,11 @@ const Menu = () => (
   // react fragment to group multiple elements without adding extra nodes to the DOM
   <>  
     <p><a href="/#home">Home</a></p>
-    <p><a href="/#ourteam">About</a></p>
-    <p><a href="/#initiatives">Initiatives</a></p>
+    <p><a href="/#aboutus">About Us</a></p>
     <p><a href="/#partners">Partners</a></p>
-    <p><a href="/#team">Team</a></p>
+    <p><a href="/#ourteam">Team</a></p>
+    <p><a href="/#eventgallery">Events</a></p>
+    <p><a href="/#donationportal">Donation Portal</a></p>
   </>
 )
 
