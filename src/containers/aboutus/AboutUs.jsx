@@ -1,5 +1,5 @@
 import React from 'react'
-import './features.css'
+import './aboutus.css'
 import { Feature } from '../../Components'
 
 // Import team member images from assets
@@ -8,7 +8,7 @@ import MikeGong from '../../assets/MikeGong.jpg'
 import GalaxySu from '../../assets/GalaxySu.jpg'
 import EldrickChand from '../../assets/EldrickChand.jpg'
 
-const featuresData = [
+const foundersData = [
   {
     name: "Darius Alexander",
     img: DariusAlexander,
@@ -36,10 +36,10 @@ const featuresData = [
   },
 ]
 
-const Features = () => {
+const AboutUs = () => {
   return (
-    <div className="byyourside_features section_padding" id="features">
-      <div className="byyourside_features-mission">
+    <div className="byyourside_aboutus section_padding" id="aboutus">
+      <div className="byyourside_aboutus-mission">
         <h1 className="gradient_text">
           Our Mission
         </h1>
@@ -51,7 +51,7 @@ const Features = () => {
           stronger, more caring society—one meal at a time.
         </p>
       </div>
-      <div className="byyourside_features-heading">
+      <div className="byyourside_aboutus-heading">
         <h1 className="gradient_text">
           Our Founding Story
         </h1>
@@ -63,8 +63,8 @@ const Features = () => {
           compassionate organization dedicated to uplifting the lives of the less fortunate
         </p>
       </div>      
-      <div className="byyourside_features-container">
-        {featuresData.map((item, index) => (
+      <div className="byyourside_aboutus-container">
+        {foundersData.map((item, index) => (
           <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
       </div>
@@ -72,7 +72,7 @@ const Features = () => {
   )
 }
 
-export default Features
+export default AboutUs
 
 
 

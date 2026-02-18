@@ -1,11 +1,11 @@
-.byyourside_features {
+.byyourside_aboutus {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.byyourside_features-mission {
+.byyourside_aboutus-mission {
     max-width: 800px;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     margin-bottom: 4rem;
 }
 
-.byyourside_features-mission h1 {
+.byyourside_aboutus-mission h1 {
     font-family: var(--font-family);        
     font-style: normal;
     font-weight: 800;
@@ -21,7 +21,7 @@
     line-height: 45px;
 }
 
-.byyourside_features-mission p {
+.byyourside_aboutus-mission p {
     font-family: var(--font-family);
     font-style: normal;
     font-weight: 500;
@@ -31,7 +31,7 @@
     margin-top: 2rem;
 }
 
-.byyourside_features-heading {
+.byyourside_aboutus-heading {
     max-width: 800px;
     display: flex;
     flex-direction: column;
@@ -39,7 +39,7 @@
     margin-bottom: 3rem;
 }
 
-.byyourside_features-heading h1 {
+.byyourside_aboutus-heading h1 {
     font-family: var(--font-family);        
     font-style: normal;
     font-weight: 800;
@@ -47,7 +47,7 @@
     line-height: 45px;
 }
 
-.byyourside_features-heading p {
+.byyourside_aboutus-heading p {
     font-family: var(--font-family);
     font-style: normal;
     font-weight: 500;
@@ -57,7 +57,7 @@
     margin-top: 2rem;
 }
 
-.byyourside_features-container {
+.byyourside_aboutus-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -67,27 +67,27 @@
 }
 
 @media screen and (max-width: 990px) {
-    .byyourside_features-container {
+    .byyourside_aboutus-container {
         gap: 1.5rem;
     }
 
-    .byyourside_features-heading {
+    .byyourside_aboutus-heading {
         margin-bottom: 2rem;
     }
 
-    .byyourside_features-mission {
+    .byyourside_aboutus-mission {
         margin-bottom: 3rem;
     }
 }
 
 @media screen and (max-width: 550px) {
-    .byyourside_features-heading h1,
-    .byyourside_features-mission h1 {
+    .byyourside_aboutus-heading h1,
+    .byyourside_aboutus-mission h1 {
         font-size: 28px;
         line-height: 38px;
     }
 
-    .byyourside_features-container {
+    .byyourside_aboutus-container {
         gap: 1rem;
     }
 }
