@@ -39,6 +39,18 @@ const featuresData = [
 const Features = () => {
   return (
     <div className="byyourside_features section_padding" id="features">
+      <div className="byyourside_features-mission">
+        <h1 className="gradient_text">
+          Our Mission
+        </h1>
+        <p>
+          At ByYourSide Society, we are committed to fighting food insecurity and 
+          supporting vulnerable communities across the Greater Vancouver Area. Through 
+          partnerships, volunteer efforts, and compassionate outreach, we strive to ensure 
+          that no one in our community goes hungry. Together, we believe in building a 
+          stronger, more caring society—one meal at a time.
+        </p>
+      </div>
       <div className="byyourside_features-heading">
         <h1 className="gradient_text">
           Our Founding Story

@@ -25,7 +25,7 @@
 }
 
 /* Tablet - 2 columns */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1024px) {
     .byyourside_blog-container {
         grid-template-columns: repeat(2, 1fr);
     }
