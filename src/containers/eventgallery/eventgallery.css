@@ -1,15 +1,15 @@
-.byyourside_blog {
+.byyourside_eventgallery {
     display: flex;
     flex-direction: column;
 }
 
-.byyourside_blog-heading {
+.byyourside_eventgallery-heading {
     width: 100%;
     text-align: left;
     margin-bottom: 3rem;
 }
 
-.byyourside_blog-heading h1 {
+.byyourside_eventgallery-heading h1 {
     font-family: var(--font-family);
     font-weight: 800;
     font-size: 62px;
@@ -18,7 +18,7 @@
 }
 
 /* 6 equal articles in a 3-column grid */
-.byyourside_blog-container {
+.byyourside_eventgallery-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -26,11 +26,11 @@
 
 /* Tablet - 2 columns */
 @media screen and (max-width: 1024px) {
-    .byyourside_blog-container {
+    .byyourside_eventgallery-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .byyourside_blog-heading h1 {
+    .byyourside_eventgallery-heading h1 {
         font-size: 46px;
         line-height: 52px;
     }
@@ -38,11 +38,11 @@
 
 /* Mobile - 1 column */
 @media screen and (max-width: 550px) {
-    .byyourside_blog-container {
+    .byyourside_eventgallery-container {
         grid-template-columns: 1fr;
     }
 
-    .byyourside_blog-heading h1 {
+    .byyourside_eventgallery-heading h1 {
         font-size: 34px;
         line-height: 42px;
     }

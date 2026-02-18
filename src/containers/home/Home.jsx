@@ -2,7 +2,7 @@ import React from 'react';
 
 // Import page sections from the containers folder
 // '..' means "go up one level" to the containers folder, then use its index.js
-import { Footer, Blog, Header, Possibility, AboutUs, OurTeam } from '..';
+import { Footer, EventGallery, Header, Possibility, AboutUs, OurTeam } from '..';
 
 // Import components from the Components folder
 import { CTA, Partners } from '../../Components';
@@ -17,7 +17,7 @@ const Home = () => {
             <AboutUs />
             <Possibility />
             <CTA />
-            <Blog />
+            <EventGallery />
             <Footer />
         </>
     );
