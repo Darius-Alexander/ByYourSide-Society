@@ -1,5 +1,5 @@
 import React from 'react'
-import './byyourside.css'
+import './ourteam.css'
 import { Feature } from '../../Components'
 
 import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
@@ -51,26 +51,26 @@ const teamData = [
   },
 ]
 
-const Byyourside = () => {
+const OurTeam = () => {
   return (
-    <div className="byyourside_byyourside gradient_bg section_margin" id="byyourside">
-      <div className="byyourside_byyourside-heading">
+    <div className="byyourside_ourteam gradient_bg section_margin" id="ourteam">
+      <div className="byyourside_ourteam-heading">
         <h1 className="gradient_text">
           Our Team
         </h1>
       </div>
-      <h2 className="byyourside_byyourside-subheading">
+      <h2 className="byyourside_ourteam-subheading">
         Our Board
       </h2>
-      <div className="byyourside_byyourside-container">
+      <div className="byyourside_ourteam-container">
         {boardData.map((item, index) => (
           <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
       </div>
-      <h2 className="byyourside_byyourside-subheading">
+      <h2 className="byyourside_ourteam-subheading">
         Our Executives
       </h2>
-      <div className="byyourside_byyourside-container">
+      <div className="byyourside_ourteam-container">
         {teamData.map((item, index) => (
           <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
@@ -79,4 +79,4 @@ const Byyourside = () => {
   )
 }
 
-export default Byyourside
+export default OurTeam

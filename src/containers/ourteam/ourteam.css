@@ -1,5 +1,4 @@
-
-.byyourside_byyourside-feature {
+.byyourside_ourteam-feature {
     display: flex; /* Flexbox layout; default: block */
 
 }
@@ -12,7 +11,7 @@
     max-width: 700px;
 }
 
-.byyourside_byyourside-heading {
+.byyourside_ourteam-heading {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,14 +19,14 @@
     margin: 4rem 0 2rem;
 }
 
-.byyourside_byyourside-heading h1 {
+.byyourside_ourteam-heading h1 {
     font-size: 34px;
     line-height: 45px;
     font-weight: 800;
     font-family: var(--font-family);
 }
 
-.byyourside_byyourside-subheading {
+.byyourside_ourteam-subheading {
     font-family: var(--font-family);
     font-size: 24px;
     font-weight: 600;
@@ -36,7 +35,7 @@
     margin: 2rem 0 1rem;
 }
 
-.byyourside_byyourside-heading p {
+.byyourside_ourteam-heading p {
     font-size: 16px;
     line-height: 30px;
     font-weight: 500;
@@ -46,7 +45,7 @@
     cursor: pointer;
 }
 
-.byyourside_byyourside-container {
+.byyourside_ourteam-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -57,7 +56,7 @@
 
 
 /* Customizing feature component as per needs */
-.byyourside_byyourside-container .byyourside_features-container__feature {
+.byyourside_ourteam-container .byyourside_features-container__feature {
     flex: 1;
     margin: 1rem;
     min-width: 210px;
@@ -66,18 +65,18 @@
 }
 
 /* Customizing feature component as per needs */
-.byyourside_byyourside-container .byyourside_features-container_feature-text {
+.byyourside_ourteam-container .byyourside_features-container_feature-text {
     margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 850px) {
-    .byyourside_byyourside-heading {
+    .byyourside_ourteam-heading {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 0rem;
     }
 
-    .byyourside_byyourside-heading p {
+    .byyourside_ourteam-heading p {
         margin-top: 1rem;
     }
 }
@@ -93,7 +92,7 @@
         margin-top: 0.5rem;
     }
 
-    .byyourside_byyourside-heading h1 {
+    .byyourside_ourteam-heading h1 {
         font-size: 28px;
         line-height: 40px;
     }
@@ -101,7 +100,7 @@
 
 @media screen and (max-width: 350px) {
     /* Customizing feature component as per needs */
-    .byyourside_byyourside-container .byyourside_features-container__feature {
+    .byyourside_ourteam-container .byyourside_features-container__feature {
         margin: 1rem 0;
         min-width: 100%;
     }
