@@ -1,0 +1,8 @@
+/* Separator Component Styling */
+.byyourside_separator {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    height: 1px;
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
+}

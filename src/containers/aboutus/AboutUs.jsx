@@ -1,6 +1,6 @@
 import React from 'react'
 import './aboutus.css'
-import { Feature } from '../../Components'
+import { Feature, Separator } from '../../Components'
 
 // Import team member images from assets
 import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
@@ -50,7 +50,40 @@ const AboutUs = () => {
           that no one in our community goes hungry. Together, we believe in building a 
           stronger, more caring society—one meal at a time.
         </p>
+      </div>      
+      
+      <Separator />
+
+      <div className="byyourside_aboutus-initiatives" id="initiatives">
+        <h1 className="gradient_text">
+          Our Initiatives
+        </h1>
+
+        <div className="byyourside_aboutus-initiatives_list">
+          <div className="byyourside_aboutus-initiatives_item">
+            <h3>Operation Hunger</h3>
+            <p>
+              Our flagship initiative focused on combating food insecurity in the Greater 
+              Vancouver Area. Through partnerships with local food banks and community 
+              organizations, we distribute meals and essential groceries to families in need. 
+              Since 2022, Operation Hunger has provided over 5,000 meals to vulnerable communities.
+            </p>
+          </div>
+          <div className="byyourside_aboutus-initiatives_item">
+            <h3>Project Warmth</h3>
+            <p>
+              A seasonal clothing drive initiative that collects and distributes warm clothing 
+              to those facing harsh winter conditions. Working with shelters and community 
+              centers, Project Warmth has donated over 1,000 items including coats, blankets, 
+              and winter accessories to help keep our community warm.
+            </p>
+          </div>
+        </div>
+        
       </div>
+      
+      <Separator />
+      
       <div className="byyourside_aboutus-heading">
         <h1 className="gradient_text">
           Our Founding Story
@@ -62,7 +95,10 @@ const AboutUs = () => {
           of Windermere Secondary School united to form ByYourSide Society, a youth-led
           compassionate organization dedicated to uplifting the lives of the less fortunate
         </p>
-      </div>      
+      </div>
+      
+      <Separator />
+      
       <div className="byyourside_aboutus-container">
         {foundersData.map((item, index) => (
           <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />

@@ -1,6 +1,6 @@
 import React from 'react'
 import './ourteam.css'
-import { Feature } from '../../Components'
+import { Feature, Separator } from '../../Components'
 
 import { DariusAlexander, CyrusAlexander, defaultpic } from '../../assets/imports';
 // import KentaYoshimura from '../../assets/KentaYoshimura.jpg'
@@ -30,35 +30,42 @@ const teamData = [
     position: "CEO",
   },
   {
-    name: "Operation Hunger",
-    img: defaultpic,
-    position: "COO",
-  },
-  {
-    name: "Operation Hunger",
-    img: defaultpic,
-    position: "CFO",
-  },
-  {
-    name: "Operation Hunger",
+    name: "Kim Lue",
     img: defaultpic,
     position: "CMO",
   },
   {
-    name: "Operation Hunger",
+    name: "Daniel Li",
     img: defaultpic,
-    position: "CHRO",
+    position: "COO",
   },
+  {
+    name: "Marek Hussin",
+    img: defaultpic,
+    position: "COO",
+  },
+  {
+    name: "Jeremy Hong",
+    img: defaultpic,
+    position: "CFO",
+  },
+  {
+    name: "Angela Mae",
+    img: defaultpic,
+    position: "CRO"
+  }
 ]
 
 const OurTeam = () => {
   return (
-    <div className="byyourside_ourteam gradient_bg section_margin" id="ourteam">
-      <div className="byyourside_ourteam-heading">
+    <div className="byyourside_ourteam gradient_bg section_margin" id="ourteam">      <div className="byyourside_ourteam-heading">
         <h1 className="gradient_text">
           Our Team
         </h1>
       </div>
+      
+      <Separator />
+      
       <h2 className="byyourside_ourteam-subheading">
         Our Board
       </h2>
@@ -67,6 +74,9 @@ const OurTeam = () => {
           <Feature name={item.name} img={item.img} position={item.position} key={item.name + index} />
         ))}
       </div>
+      
+      <Separator />
+      
       <h2 className="byyourside_ourteam-subheading">
         Our Executives
       </h2>
