@@ -1,39 +1,83 @@
 import { useState } from 'react'
 import './donation.css'
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const donationAmounts = [10, 25, 50, 100, 250];
 
-const Donation = () => {
+const stripePromise = loadStripe('pk_test_XXXXXXXXXXXXXXXXXXXXXXXX'); // TODO: Replace with your Stripe publishable key
+
+const DonationForm = () => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState('');
+  const [processing, setProcessing] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const stripe = useStripe();
+  const elements = useElements();
 
   const handleAmountSelect = (amount) => {
     setSelectedAmount(amount);
-    setCustomAmount(''); // Clear custom input when preset is selected
+    setCustomAmount('');
   };
 
   const handleCustomAmountChange = (e) => {
     setCustomAmount(e.target.value);
-    setSelectedAmount(null); // Deselect preset buttons when typing custom amount
+    setSelectedAmount(null);
   };
 
-  // Returns the current donation amount (either preset or custom)
   const getCurrentAmount = () => {
     return selectedAmount || parseFloat(customAmount) || 0;
   };
 
-  // Placeholder submit handler (Stripe integration comes later)
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent page refresh
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
     const amount = getCurrentAmount();
     if (amount <= 0) {
-      alert('Please select or enter a donation amount');
+      setError('Please select or enter a donation amount');
       return;
     }
-    alert(`Thank you! Your donation of $${amount} would be processed here.`);
+    if (!stripe || !elements) {
+      setError('Stripe is not loaded yet.');
+      return;
+    }
+    setProcessing(true);
+    try {
+      // 1. Create PaymentIntent on backend
+      const res = await fetch('/api/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: Math.round(amount * 100) }) // Stripe expects cents
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to create payment intent');
+      const clientSecret = data.clientSecret;
+      // 2. Confirm card payment
+      const result = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        }
+      });
+      if (result.error) {
+        setError(result.error.message);
+      } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+        setSuccess('Thank you! Your donation was successful.');
+        setSelectedAmount(null);
+        setCustomAmount('');
+        elements.getElement(CardElement).clear();
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setProcessing(false);
+    }
   };
+
   return (
-    <div className="byyourside_donation section_padding gradient_bg">
+    <form className="byyourside_donation section_padding gradient_bg" onSubmit={handleSubmit}>
       <div className="byyourside_donation-content">
         <div className="byyourside_donation-header">
           <h1 className="gradient_text">Make a Donation</h1>
@@ -42,7 +86,6 @@ const Donation = () => {
             fortunate in Vancouver and the lower mainland. Every dollar makes a difference.
           </p>
         </div>
-
         <div className="byyourside_donation-amounts">
           <h3>Select an amount</h3>
           <div className="byyourside_donation-amounts_buttons">
@@ -52,13 +95,13 @@ const Donation = () => {
                 key={amount}
                 className={`donation-amount-btn ${selectedAmount === amount ? 'selected' : ''}`}
                 onClick={() => handleAmountSelect(amount)}
+                disabled={processing}
               >
                 ${amount}
               </button>
             ))}
           </div>
         </div>
-
         <div className="byyourside_donation-custom">
           <h3>Or enter a custom amount</h3>
           <div className="byyourside_donation-custom_input">
@@ -70,26 +113,37 @@ const Donation = () => {
               placeholder="Enter amount"
               value={customAmount}
               onChange={handleCustomAmountChange}
+              disabled={processing}
             />
           </div>
         </div>
-
         <div className="byyourside_donation-summary">
           <p>Donation amount: <strong>${getCurrentAmount().toFixed(2)}</strong></p>
         </div>
-
+        <div className="byyourside_donation-card">
+          <h3>Card Details</h3>
+          <div className="byyourside_donation-card_input">
+            <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
+          </div>
+        </div>
+        {error && <div className="donation-error">{error}</div>}
+        {success && <div className="donation-success">{success}</div>}
         <button 
-          type="button"
+          type="submit"
           className="byyourside_donation-submit"
-          onClick={handleSubmit}
-          disabled={getCurrentAmount() <= 0}
+          disabled={getCurrentAmount() <= 0 || processing}
         >
-          Donate ${getCurrentAmount().toFixed(2)}
+          {processing ? 'Processing...' : `Donate $${getCurrentAmount().toFixed(2)}`}
         </button>
-
       </div>
-    </div>
-  )
-}
+    </form>
+  );
+};
+
+const Donation = () => (
+  <Elements stripe={stripePromise}>
+    <DonationForm />
+  </Elements>
+);
 
 export default Donation
