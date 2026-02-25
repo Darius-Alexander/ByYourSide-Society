@@ -142,6 +142,48 @@
     font-weight: 400;
 }
 
+/* Email input section */
+.byyourside_donation-email {
+    margin: 2rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.byyourside_donation-email h3 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.byyourside_donation-email input[type="email"] {
+    width: 100%;
+    max-width: 350px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+    font-size: 16px;
+    font-family: var(--font-family);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    margin-bottom: 0.25rem;
+}
+
+.byyourside_donation-email input[type="email"]:focus {
+    border: 1.5px solid var(--color-primary, #ff7a59);
+    box-shadow: 0 0 0 2px rgba(255,122,89,0.15);
+}
+
+.byyourside_donation-email input[type="email"]:disabled {
+    background: rgba(255,255,255,0.03);
+    color: #aaa;
+    cursor: not-allowed;
+}
+
 /* Summary section showing selected amount */
 .byyourside_donation-summary {
     text-align: center;
