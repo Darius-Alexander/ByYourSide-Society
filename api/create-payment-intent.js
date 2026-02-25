@@ -7,12 +7,13 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { amount, currency = 'usd' } = req.body;
+    const { amount, currency = 'usd', email } = req.body;
 
-    // Create a PaymentIntent with the specified amount and currency
+    // Create a PaymentIntent with the specified amount, currency, and receipt_email
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
       currency,
+      receipt_email: email,
     });
 
     res.status(200).json({ clientSecret: paymentIntent.client_secret });

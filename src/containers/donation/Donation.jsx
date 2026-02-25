@@ -5,11 +5,12 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 
 const donationAmounts = [10, 25, 50, 100, 250];
 
-const stripePromise = loadStripe('pk_test_XXXXXXXXXXXXXXXXXXXXXXXX'); // TODO: Replace with your Stripe publishable key
+const stripePromise = loadStripe('pk_test_51STtO0PxUA0N6p7mQuv8gAnyizjOJtMi9zTCUQ3Soty1RKBuqlTYkyfoiu8ylPqHjyH9lEjV6pCLWsJFHhRDFIry00OYUEDUTv'); // TODO: Replace with your Stripe publishable key
 
 const DonationForm = () => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState('');
+  const [email, setEmail] = useState('');
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -40,6 +41,10 @@ const DonationForm = () => {
       setError('Please select or enter a donation amount');
       return;
     }
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
     if (!stripe || !elements) {
       setError('Stripe is not loaded yet.');
       return;
@@ -50,7 +55,7 @@ const DonationForm = () => {
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: Math.round(amount * 100) }) // Stripe expects cents
+        body: JSON.stringify({ amount: Math.round(amount * 100), email }) // Send email
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to create payment intent');
@@ -59,6 +64,7 @@ const DonationForm = () => {
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
+          billing_details: { email },
         }
       });
       if (result.error) {
@@ -67,6 +73,7 @@ const DonationForm = () => {
         setSuccess('Thank you! Your donation was successful.');
         setSelectedAmount(null);
         setCustomAmount('');
+        setEmail('');
         elements.getElement(CardElement).clear();
       }
     } catch (err) {
@@ -116,6 +123,17 @@ const DonationForm = () => {
               disabled={processing}
             />
           </div>
+        </div>
+        <div className="byyourside_donation-email">
+          <h3>Email for receipt</h3>
+          <input
+            type="email"
+            placeholder="your@email.com"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            disabled={processing}
+            required
+          />
         </div>
         <div className="byyourside_donation-summary">
           <p>Donation amount: <strong>${getCurrentAmount().toFixed(2)}</strong></p>
