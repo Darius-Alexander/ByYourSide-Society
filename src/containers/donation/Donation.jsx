@@ -3,7 +3,7 @@ import './donation.css'
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const donationAmounts = [10, 25, 50, 100, 250];
+const donationAmounts = [5, 10, 25, 50, 100];
 
 const stripePromise = loadStripe('pk_test_51STtO0PxUA0N6p7mQuv8gAnyizjOJtMi9zTCUQ3Soty1RKBuqlTYkyfoiu8ylPqHjyH9lEjV6pCLWsJFHhRDFIry00OYUEDUTv'); // TODO: Replace with your Stripe publishable key
 
@@ -14,6 +14,7 @@ const DonationForm = () => {
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [cardComplete, setCardComplete] = useState(false);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -83,6 +84,14 @@ const DonationForm = () => {
     }
   };
 
+  const isFormValid = (
+    getCurrentAmount() > 0 &&
+    email &&
+    /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) &&
+    cardComplete &&
+    !processing
+  );
+
   return (
     <form className="byyourside_donation section_padding gradient_bg" onSubmit={handleSubmit}>
       <div className="byyourside_donation-content">
@@ -118,7 +127,7 @@ const DonationForm = () => {
               min="1"
               step="1"
               placeholder="Enter amount"
-              value={customAmount}
+              value={customAmount === '' ? undefined : customAmount}
               onChange={handleCustomAmountChange}
               disabled={processing}
             />
@@ -141,7 +150,10 @@ const DonationForm = () => {
         <div className="byyourside_donation-card">
           <h3>Card Details</h3>
           <div className="byyourside_donation-card_input">
-            <CardElement options={{ style: { base: { fontSize: '16px' } } }} />
+            <CardElement 
+              options={{ style: { base: { fontSize: '16px' } } }}
+              onChange={e => setCardComplete(e.complete)}
+            />
           </div>
         </div>
         {error && <div className="donation-error">{error}</div>}
@@ -149,7 +161,7 @@ const DonationForm = () => {
         <button 
           type="submit"
           className="byyourside_donation-submit"
-          disabled={getCurrentAmount() <= 0 || processing}
+          disabled={!isFormValid}
         >
           {processing ? 'Processing...' : `Donate $${getCurrentAmount().toFixed(2)}`}
         </button>
