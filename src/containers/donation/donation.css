@@ -160,7 +160,8 @@
 
 .byyourside_donation-email input[type="email"] {
     width: 100%;
-    max-width: 350px;
+    max-width: none;
+    box-sizing: border-box;
     padding: 0.75rem 1rem;
     border-radius: 8px;
     border: 1px solid rgba(255,255,255,0.2);
@@ -182,6 +183,75 @@
     background: rgba(255,255,255,0.03);
     color: #aaa;
     cursor: not-allowed;
+}
+
+/* Card details input section */
+.byyourside_donation-card {
+    margin: 2rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.byyourside_donation-card h3 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.byyourside_donation-card_input {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+    font-size: 16px;
+    font-family: var(--font-family);
+    transition: border 0.2s, box-shadow 0.2s;
+    margin-bottom: 0.25rem;
+    overflow-x: hidden;
+}
+
+.byyourside_donation-card_input:focus-within {
+    border: 1.5px solid var(--color-primary, #ff7a59);
+    box-shadow: 0 0 0 2px rgba(255,122,89,0.15);
+}
+
+.byyourside_donation-card_input .StripeElement {
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-family: var(--font-family);
+    width: 100%;
+    min-width: 0;
+    letter-spacing: 0.1em;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    background-image: none !important;
+}
+
+.byyourside_donation-card_input .StripeElement input {
+    overflow-x: hidden !important;
+}
+
+.byyourside_donation-card_input .StripeElement--focus {
+    outline: none;
+    border-color: var(--color-primary, #ff7a59);
+}
+
+.byyourside_donation-card_input .StripeElement--invalid {
+    color: #ff7a59;
+}
+
+.byyourside_donation-card_input .StripeElement--webkit-autofill {
+    background: transparent !important;
 }
 
 /* Summary section showing selected amount */
@@ -261,6 +331,11 @@
 
     .byyourside_donation-summary strong {
         font-size: 20px;
+    }
+
+    .byyourside_donation-email input[type="email"],
+    .byyourside_donation-card_input {
+        padding: 0.75rem 0.5rem;
     }
 }
 
