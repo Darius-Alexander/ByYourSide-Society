@@ -51,9 +51,9 @@ const DonationForm = () => {
       return;
     }
     setProcessing(true);
-    try {
-      // 1. Create PaymentIntent on backend
-      const res = await fetch('/api/create-payment-intent', {
+    try {      // 1. Create PaymentIntent on backend
+      const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+      const res = await fetch(`${backendURL}/api/create-payment-intent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: Math.round(amount * 100), email }) // Send email
