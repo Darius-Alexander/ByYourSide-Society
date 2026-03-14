@@ -5,7 +5,7 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 
 const donationAmounts = [5, 10, 25, 50, 100];
 
-const stripePromise = loadStripe('pk_test_51STtO0PxUA0N6p7mQuv8gAnyizjOJtMi9zTCUQ3Soty1RKBuqlTYkyfoiu8ylPqHjyH9lEjV6pCLWsJFHhRDFIry00OYUEDUTv'); // TODO: Replace with your Stripe publishable key
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const DonationForm = () => {
   const [selectedAmount, setSelectedAmount] = useState(null);

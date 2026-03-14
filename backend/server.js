@@ -1,90 +1,70 @@
-// ============================================
-// 1. IMPORT REQUIRED PACKAGES
-// ============================================
-// These are like tools we're bringing into our project
-const express = require('express');        // The web server framework
-const cors = require('cors');              // Allows requests from different domains
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);  // Stripe payment library
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const Stripe = require('stripe');
 
-// ============================================
-// 2. CREATE THE EXPRESS APP
-// ============================================
-// This creates our server instance
 const app = express();
-
-// Get the port from environment variables, or use 5000 if not set
 const PORT = process.env.PORT || 5000;
 
-// ============================================
-// 3. MIDDLEWARE (Request preprocessing)
-// ============================================
-// Middleware runs BEFORE your routes handle requests
-// Think of it like a checkpoint that processes incoming data
+// CORS with explicit OPTIONS handling
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:5000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}));
 
-// CORS: Allows requests from your frontend (different domain)
-// Without this, your React app (localhost:3000) can't talk to your server (localhost:5000)
-app.use(cors());
+// Handle preflight requests
+app.options('*', cors());
 
-// Express.json(): Converts incoming JSON data into JavaScript objects
-// This makes it easy to read data sent from your frontend
 app.use(express.json());
 
-// ============================================
-// 4. ROUTES (Handle different requests)
-// ============================================
-// Routes are like endpoints - they listen for specific requests and respond
+const stripeKey = process.env.STRIPE_SECRET_KEY;
+console.log('Loaded Stripe Key:', stripeKey ? `${stripeKey.slice(0, 15)}...` : 'NOT FOUND');
 
-// Health Check Endpoint
-// Purpose: Verify the server is running
-// Used by: Monitoring services (like Render) to check if your server is alive
+if (!stripeKey) {
+  console.error('ERROR: STRIPE_SECRET_KEY not found in .env');
+  process.exit(1);
+}
+
+const stripe = new Stripe(stripeKey); 
+
+// Health check
 app.get('/api/health', (req, res) => {
-  // req = the incoming request
-  // res = the response we send back
   res.json({ status: 'Server is running' });
 });
 
-// Create Payment Intent Endpoint
-// Purpose: Securely create a Stripe payment intent
-// Used by: Your React donation form
+// Create payment intent
 app.post('/api/create-payment-intent', async (req, res) => {
   try {
-    // Extract data sent from the frontend
-    // amount: how much to charge (in cents)
-    // currency: payment currency (default: USD)
-    // email: donor's email for receipt
-    const { amount, currency = 'usd', email } = req.body;
+    const { amount, currency = 'cad', email } = req.body;
+    console.log('Creating PaymentIntent:', { amount, currency, email });
 
-    // Validate that we received an amount
-    if (!amount || !email) {
-      return res.status(400).json({ error: 'Amount and email are required' });
-    }
-
-    // Call Stripe API to create a payment intent
-    // This tells Stripe: "A user wants to pay $X, here's their email"
-    // Stripe responds with a clientSecret we send back to the frontend
     const paymentIntent = await stripe.paymentIntents.create({
-      amount,           // Amount in cents (e.g., 500 = $5.00)
-      currency,         // Currency code (e.g., 'usd')
-      receipt_email: email,  // Stripe will email a receipt to this address
+      amount,
+      currency,
+      receipt_email: email,
+      automatic_payment_methods: { enabled: true }
     });
 
-    // Send back the clientSecret
-    // The frontend uses this to confirm the payment with the user's card
-    res.status(200).json({ clientSecret: paymentIntent.client_secret });
+    return res.status(200).json({
+      clientSecret: paymentIntent.client_secret
+    });
 
   } catch (error) {
-    // If anything goes wrong (API error, validation error, etc.)
-    console.error('Stripe API error:', error);
-    res.status(500).json({ error: error.message });
+    console.error('Error creating PaymentIntent:', error);
+    return res.status(500).json({
+      error: error.message || 'Internal server error'
+    });
   }
 });
 
-// ============================================
-// 5. START THE SERVER
-// ============================================
-// Listen on the specified port and start accepting requests
+app.get('*', (req, res) => {
+  res.status(404).json({
+    error: 'Not found. Use POST /api/create-payment-intent'
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/api/health`);
-  console.log(`Stripe endpoint: POST http://localhost:${PORT}/api/create-payment-intent`);
 });
