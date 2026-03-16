@@ -14,6 +14,8 @@ const DonationForm = () => {
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [successAmount, setSuccessAmount] = useState(0);
+  const [successEmail, setSuccessEmail] = useState('');
   const [cardComplete, setCardComplete] = useState(false);
 
   const stripe = useStripe();
@@ -36,8 +38,8 @@ const DonationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    setSuccess(null);
     const amount = getCurrentAmount();
+
     if (amount <= 0) {
       setError('Please select or enter a donation amount');
       return;
@@ -50,8 +52,10 @@ const DonationForm = () => {
       setError('Stripe is not loaded yet.');
       return;
     }
+
     setProcessing(true);
-    try {      // 1. Create PaymentIntent on backend
+    try {      
+      // 1. Create PaymentIntent on backend
       const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
       const res = await fetch(`${backendURL}/api/create-payment-intent`, {
         method: 'POST',
@@ -61,6 +65,7 @@ const DonationForm = () => {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to create payment intent');
       const clientSecret = data.clientSecret;
+
       // 2. Confirm card payment
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -68,14 +73,13 @@ const DonationForm = () => {
           billing_details: { email },
         }
       });
+      
       if (result.error) {
         setError(result.error.message);
       } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
-        setSuccess('Thank you! Your donation was successful.');
-        setSelectedAmount(null);
-        setCustomAmount('');
-        setEmail('');
-        elements.getElement(CardElement).clear();
+        setSuccess(true);
+        setSuccessAmount(amount);
+        setSuccessEmail(email);
       }
     } catch (err) {
       setError(err.message);
@@ -91,6 +95,59 @@ const DonationForm = () => {
     cardComplete &&
     !processing
   );
+
+  const handleDonateAgain = () => {
+    setSuccess(false);
+    setSuccessAmount(0);
+    setSuccessEmail('');
+    setSelectedAmount(null);
+    setCustomAmount('');
+    setEmail('');
+    setError(null);
+    elements.getElement(CardElement).clear();
+  };
+
+  // Show thank you screen if successful
+  if (success) {
+    return (
+      <>
+        <div className="donation-thank-you">
+          <div className="donation-thank-you-container">
+            <div className="donation-thank-you-icon">✓</div>
+            <h1>Thank You for Your Donation!</h1>
+            <p className="donation-thank-you-message">
+              Your generosity means the world to us. Together, we're making a real difference 
+              in the lives of those in need.
+            </p>
+            <div className="donation-thank-you-details">
+              <div className="donation-detail-item">
+                <span>Amount Donated:</span>
+                <strong>${successAmount.toFixed(2)}</strong>
+              </div>
+              <div className="donation-detail-item">
+                <span>Receipt Sent To:</span>
+                <strong>{successEmail}</strong>
+              </div>
+            </div>
+            <p className="donation-thank-you-receipt">
+              A detailed receipt has been sent to your email address.
+            </p>
+            <div className="donation-thank-you-buttons">
+              <button 
+                className="donation-btn-primary"
+                onClick={handleDonateAgain}
+              >
+                Donate Again
+              </button>
+              <a href="/" className="donation-btn-secondary">
+                Return Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <form className="byyourside_donation section_padding gradient_bg" onSubmit={handleSubmit}>
