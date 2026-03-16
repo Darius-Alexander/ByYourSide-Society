@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS with explicit OPTIONS handling
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5000'],
+  origin: ['http://localhost:3000', 'https://byyourside-society.onrender.com'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
