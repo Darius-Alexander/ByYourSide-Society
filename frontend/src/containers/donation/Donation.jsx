@@ -56,7 +56,7 @@ const DonationForm = () => {
     setProcessing(true);
     try {      
       // 1. Create PaymentIntent on backend
-      const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+      const backendURL = process.env.REACT_APP_BACKEND_URL || 'https://byyourside-api.onrender.com';
       const res = await fetch(`${backendURL}/api/create-payment-intent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
