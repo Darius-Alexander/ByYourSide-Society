@@ -20,15 +20,15 @@
 }
 
 .byyourside_ourteam-heading h1 {
-    font-size: 34px;
-    line-height: 45px;
+    font-size: 25px; /* Reduced again from 28px */
+    line-height: 34px; /* Reduced again from 38px */
     font-weight: 800;
     font-family: var(--font-family);
 }
 
 .byyourside_ourteam-subheading {
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 18px; /* Reduced again from 20px */
     font-weight: 600;
     color: #FFFFFF;
     text-align: center;

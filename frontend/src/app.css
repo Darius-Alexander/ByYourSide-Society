@@ -2,6 +2,9 @@
     box-sizing: border-box;  /* Include padding and border in element's total width and height */
     margin: 0;
     padding: 0;
+}
+
+html {
     scroll-behavior: smooth; /* Smooth scrolling when jumping to anchor links, default is auto */
 }
 
@@ -39,11 +42,11 @@ a {
 }
 
 .section_padding {
-    padding: 4rem 6rem;
+    padding: 2.5rem 4rem;
 }
 
 .section_margin {
-    margin: 4rem 6rem;
+    margin: 2.5rem 4rem;
 }
 
 .scale-up-center {
@@ -74,21 +77,21 @@ a {
 
 @media screen and (max-width: 700px) {
     .section_padding {
-        padding: 4rem;
+        padding: 2.5rem 2.5rem;
     }
 
     .section_margin {
-        margin: 4rem;
+        margin: 2.5rem 2.5rem;
     }
 }
 
 @media screen and (max-width: 500px) {
     .section_padding {
-        padding: 4rem, 2rem;
+        padding: 2.5rem 1.25rem;
     }
 
     .section_margin {
-        margin: 4rem, 2rem;
+        margin: 2.5rem 1.25rem;
     }
 }
 

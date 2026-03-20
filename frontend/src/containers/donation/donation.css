@@ -9,7 +9,7 @@
 .byyourside_donation-content {
     max-width: 600px;
     width: 100%;
-    padding: 3rem;
+    padding: 2.5rem; /* Reduced from 3rem */
     background: var(--color-footer);
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -23,7 +23,7 @@
 
 .byyourside_donation-header h1 {
     font-family: var(--font-family);
-    font-size: 2.5rem;
+    font-size: 1.9rem; /* Reduced again from 2.1rem */
     font-weight: 800;
     color: #fff;
     margin-bottom: 1rem;
@@ -117,7 +117,7 @@
 /* Dollar sign */
 .byyourside_donation-custom_input span {
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 18px; /* Reduced again from 20px */
     font-weight: 600;
     color: #fff;
     margin-right: 0.5rem;
@@ -130,7 +130,7 @@
     border: none;
     outline: none;
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 18px; /* Reduced again from 20px */
     font-weight: 600;
     color: #fff;
     padding: 0.5rem;

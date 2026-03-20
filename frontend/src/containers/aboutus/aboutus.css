@@ -17,16 +17,16 @@
     font-family: var(--font-family);        
     font-style: normal;
     font-weight: 800;
-    font-size: 34px;
-    line-height: 45px;
+    font-size: 25px; /* Reduced again from 28px */
+    line-height: 34px; /* Reduced again from 38px */
 }
 
 .byyourside_aboutus-mission p {
     font-family: var(--font-family);
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 14px; /* Reduced again from 15px */
+    line-height: 24px; /* Reduced again from 26px */
     color: #fff;
     margin-top: 2rem;
 }
@@ -104,7 +104,7 @@
 .byyourside_aboutus-initiatives_item h3 {
     font-family: var(--font-family);
     font-weight: 700;
-    font-size: 22px;
+    font-size: 16px; /* Reduced again from 18px */
     color: #fff;
     margin-bottom: 1rem;
     background: var(--gradient-text);

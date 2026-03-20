@@ -16,8 +16,8 @@
 .byyourside_footer-heading h1 {
     font-family: var(--font-family);
     font-weight: 800;
-    font-size: 62px;
-    line-height: 75px;
+    font-size: 46px; /* Reduced again from 52px */
+    line-height: 56px; /* Reduced again from 62px */
     text-align: center;
     letter-spacing: -0.04em;
 }
@@ -36,7 +36,7 @@
 .byyourside_footer-btn p {
     box-sizing: border-box; 
     font-family: var(--font-family);
-    font-size: 18px;
+    font-size: 14.5px; /* Reduced again from 16px */
     line-height: 21px;
     color: #FFF;
     word-spacing: 2px;
@@ -86,7 +86,7 @@
 
 .byyourside_footer-links_div h4 {
     font-family: var(--font-family);
-    font-size: 18px;
+    font-size: 14.5px; /* Reduced again from 16px */
     line-height: 16px;
     color: #FFF;
     margin-bottom: 1rem;
@@ -94,8 +94,8 @@
 
 .byyourside_footer-links_div p {
     font-family: var(--font-family);
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px; /* Reduced again from 15px */
+    line-height: 22px; /* Reduced again from 24px */
     color: #FFF;
     margin-bottom: 0.5rem 0;
     cursor: pointer;
