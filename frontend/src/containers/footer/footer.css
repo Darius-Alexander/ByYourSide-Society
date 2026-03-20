@@ -43,12 +43,13 @@
 }
 
 .byyourside_footer-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row;
-    text-align: left;
-    width: 100%; /* ensure row spans full footer */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Evenly space the items */
+    align-items: flex-start; /* Top-align the items */
+    flex-direction: row; /* Horizontal alignment */
+    flex-wrap: wrap; /* Allow column-blocks to wrap on smaller screens */
+    width: 100%; /* Full width of footer; default: auto */
+    text-align: left; /* Align text to the left; default: inherited */
     gap: 1.5rem; /* consistent spacing between columns */
 }
 

@@ -3,13 +3,13 @@
 }
 
 .byyourside_header-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-
-    margin-right: 5rem;
+    flex: 1; /* Heading takes up all available space */
+    display: flex; /* Activate flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items to top */
+    flex-direction: column; /* Stack items vertically */
+    margin-right: 5rem; /* Space to the right; default: 0 */
+    max-width: 100%; /* Ensure it never exceeds viewport */
 }
 
 .byyourside_header-content h1 {
@@ -33,9 +33,11 @@
 }
 
 .byyourside_header-content_input {
-    margin: 2.5rem 0 1rem; /* Increased top margin */
-    display: flex;
-    width: 100%;
+    width: 100%; /* Width of the input section relative to its parent (content); default: auto */
+    margin: 2rem 0 1rem; /* Space above/below input section; default: 0 */
+    display: flex; /* Use flexbox for layout within the input section */
+    flex-wrap: wrap; /* Allow input and button to wrap on mobile */
+    flex-direction: row; /* Horizontal layout for input/button */
 }
 
 .byyourside_header-content_input input {
@@ -51,8 +53,6 @@
     padding: 0 1rem;
     outline: none;
     color: #fff;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 
@@ -91,7 +91,25 @@
     }
 
     .byyourside_header-content {
-        margin: 0 0 3rem;
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 3rem; /* Re-added margin-bottom */
+    }
+
+    .byyourside_header-content_input {
+        width: 100%;
+        flex-direction: column; /* Stack for narrow screens */
+    }
+
+    .byyourside_header-content_input input {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .byyourside_header-content_input button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 5px;
     }
 }
 
@@ -110,6 +128,7 @@
     .byyourside_header-content_input button {
         font-size: 16px;
         line-height: 24px;
+        width: 100%;
     }
 }
 

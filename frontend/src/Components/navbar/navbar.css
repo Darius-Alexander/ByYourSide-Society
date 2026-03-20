@@ -12,6 +12,7 @@
     display: flex; /* Use flexbox for layout */
     justify-content: flex-start; /* Align items to the start of the container */
     align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allow links to wrap to the next line on small screens */
 }
 
 .byyourside_navbar-links_logo {
@@ -37,7 +38,7 @@
     font-size: 14.5px; /* Reduced again from 16px */
     line-height: 25px; /* Adjusted line height for better readability; default: normal (~1.2x font-size) */
     text-transform: capitalize; /* Capitalize first letter of each word; default: none */
-    margin: 0 1rem; /* Horizontal margin (left/right); default: 0 */
+    margin: 0.5rem 1rem; /* Added vertical margin for wrapping */
     cursor: pointer; /* Pointer cursor on hover; default: auto (arrow) */
 }
 
