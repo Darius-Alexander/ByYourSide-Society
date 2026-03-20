@@ -15,7 +15,7 @@ const Footer = () => {
       </Link>
       <div className="byyourside_footer-links">
         <div className="byyourside_footer-links_logo">
-          <img src={logo} alt="logo"/>
+          <img src={logo} alt="logo" />
         </div>
         <div className="byyourside_footer-links_div">
           <h4>Organization</h4>
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="byyourside_footer-links_div">
           <h4>Get in touch</h4>
           <p>Email: Byyoursidesociety@gmail.com</p>
-          <p>Address: 5288 Joyce St Vancouver, BC V5R 6C9</p>
+          <p>Address: 5288 Joyce St Vancouver, BC, V5R 6C9</p>
         </div>
       </div>
       <div className="byyourside_footer-copyright">
