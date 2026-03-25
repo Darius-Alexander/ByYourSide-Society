@@ -54,7 +54,7 @@ const DonationForm = () => {
     }
 
     setProcessing(true);
-    try {      
+    try {
       // 1. Create PaymentIntent on backend
       const backendURL = process.env.REACT_APP_BACKEND_URL || 'https://byyourside-api.onrender.com';
       const res = await fetch(`${backendURL}/api/create-payment-intent`, {
@@ -73,7 +73,7 @@ const DonationForm = () => {
           billing_details: { email },
         }
       });
-      
+
       if (result.error) {
         setError(result.error.message);
       } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
@@ -116,7 +116,7 @@ const DonationForm = () => {
             <div className="donation-thank-you-icon">✓</div>
             <h1>Thank You for Your Donation!</h1>
             <p className="donation-thank-you-message">
-              Your generosity means the world to us. Together, we're making a real difference 
+              Your generosity means the world to us. Together, we're making a real difference
               in the lives of those in need.
             </p>
             <div className="donation-thank-you-details">
@@ -133,7 +133,7 @@ const DonationForm = () => {
               A detailed receipt has been sent to your email address.
             </p>
             <div className="donation-thank-you-buttons">
-              <button 
+              <button
                 className="donation-btn-primary"
                 onClick={handleDonateAgain}
               >
@@ -155,7 +155,7 @@ const DonationForm = () => {
         <div className="byyourside_donation-header">
           <h1 className="gradient_text">Make a Donation</h1>
           <p>
-            Your generosity helps us continue our mission of uplifting the less 
+            Your generosity helps us continue our mission of uplifting the less
             fortunate in Vancouver and the lower mainland. Every dollar makes a difference.
           </p>
         </div>
@@ -207,7 +207,7 @@ const DonationForm = () => {
         <div className="byyourside_donation-card">
           <h3>Card Details</h3>
           <div className="byyourside_donation-card_input">
-            <CardElement 
+            <CardElement
               options={{ style: { base: { fontSize: '16px' } } }}
               onChange={e => setCardComplete(e.complete)}
             />
@@ -215,7 +215,7 @@ const DonationForm = () => {
         </div>
         {error && <div className="donation-error">{error}</div>}
         {success && <div className="donation-success">{success}</div>}
-        <button 
+        <button
           type="submit"
           className="byyourside_donation-submit"
           disabled={!isFormValid}
