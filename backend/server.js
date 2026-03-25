@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS with explicit OPTIONS handling
 app.use(cors({
-  origin: ['https://www.byyoursidesociety.org', 'https://byyoursidesociety.org', 'http://localhost:3000'],
+  origin: ['https://byyoursidesociety.org', 'https://byyoursidesociety.vercel.app', 'http://localhost:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
