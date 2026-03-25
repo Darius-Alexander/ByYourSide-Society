@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS with explicit OPTIONS handling
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://byyourside-society.onrender.com'],
+  origin: ['https://byyoursidesociety.org', 'https://byyourside-society.onrender.com'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
@@ -27,7 +27,7 @@ if (!stripeKey) {
   process.exit(1);
 }
 
-const stripe = new Stripe(stripeKey); 
+const stripe = new Stripe(stripeKey);
 
 // Health check
 app.get('/api/health', (req, res) => {
