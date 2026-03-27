@@ -75,7 +75,11 @@ const DonationForm = () => {
       });
 
       if (result.error) {
-        setError(result.error.message);
+        let errorMessage = result.error.message;
+        if (errorMessage.toLowerCase().includes('test card') || errorMessage.toLowerCase().includes('live key') || errorMessage.toLowerCase().includes('live mode')) {
+          errorMessage = 'Your card was declined. Please try a different payment method.';
+        }
+        setError(errorMessage);
       } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
         setSuccess(true);
         setSuccessAmount(amount);
