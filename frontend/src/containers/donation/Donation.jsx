@@ -76,9 +76,17 @@ const DonationForm = () => {
 
       if (result.error) {
         let errorMessage = result.error.message;
-        if (errorMessage.toLowerCase().includes('test card') || errorMessage.toLowerCase().includes('live key') || errorMessage.toLowerCase().includes('live mode')) {
-          errorMessage = 'Your card was declined. Please try a different payment method.';
+        
+        // Only show the specific message to the user if it's a card error or validation error
+        if (result.error.type === 'card_error' || result.error.type === 'validation_error') {
+          if (errorMessage.toLowerCase().includes('test card') || errorMessage.toLowerCase().includes('live key') || errorMessage.toLowerCase().includes('live mode')) {
+            errorMessage = 'Your card was declined. Please try a different payment method.';
+          }
+        } else {
+          // Hide backend/API errors like the 'live key / test card' mismatch or 500s from the user
+          errorMessage = 'An unexpected error occurred processing your payment. Please try again later.';
         }
+        
         setError(errorMessage);
       } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
         setSuccess(true);
@@ -86,7 +94,8 @@ const DonationForm = () => {
         setSuccessEmail(email);
       }
     } catch (err) {
-      setError(err.message);
+      console.error("Payment error:", err);
+      setError("An unexpected error occurred while setting up your payment. Please try again later.");
     } finally {
       setProcessing(false);
     }
@@ -108,7 +117,12 @@ const DonationForm = () => {
     setCustomAmount('');
     setEmail('');
     setError(null);
-    elements.getElement(CardElement).clear();
+    setCardComplete(false);
+    
+    const cardElement = elements?.getElement(CardElement);
+    if (cardElement) {
+      cardElement.clear();
+    }
   };
 
   // Show thank you screen if successful
