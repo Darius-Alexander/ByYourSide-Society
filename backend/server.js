@@ -8,21 +8,17 @@ const PORT = process.env.PORT || 5000;
 
 // CORS with explicit OPTIONS handling
 const corsOptions = {
-  origin: ['https://byyoursidesociety.org', 
-           'https://www.byyoursidesociety.org',
-           'http://localhost:3000',
-           'https://byyoursidesociety.vercel.app'],
+  origin: ['https://byyoursidesociety.org', 'http://localhost:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+// Use express.json() for parsing JSON request bodies
 app.use(express.json());
 
 const stripeKey = process.env.STRIPE_SECRET_KEY;
-console.log('Loaded Stripe Key:', stripeKey ? `${stripeKey.slice(0, 15)}...` : 'NOT FOUND');
 
 if (!stripeKey) {
   console.error('ERROR: STRIPE_SECRET_KEY not found in .env');
@@ -32,7 +28,7 @@ if (!stripeKey) {
 const stripe = new Stripe(stripeKey);
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.json({ status: 'Server is running' });
 });
 
@@ -61,7 +57,7 @@ app.post('/api/create-payment-intent', async (req, res) => {
   }
 });
 
-app.get('*', (req, res) => {
+app.get('*', (_req, res) => {
   res.status(404).json({
     error: 'Not found. Use POST /api/create-payment-intent'
   });
